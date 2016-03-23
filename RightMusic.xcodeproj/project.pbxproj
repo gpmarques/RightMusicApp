@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65F965341CA306C900227843 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965331CA306C900227843 /* Usuario.swift */; };
+		65F965341CA306C900227843 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965331CA306C900227843 /* User.swift */; };
+		65F965361CA3093600227843 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965351CA3093600227843 /* Music.swift */; };
+		65F9653A1CA30AFD00227843 /* ChordsWithLyrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965391CA30AFD00227843 /* ChordsWithLyrics.swift */; };
+		65F9653C1CA30BC000227843 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F9653B1CA30BC000227843 /* Chord.swift */; };
+		65F9653E1CA32C2900227843 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F9653D1CA32C2900227843 /* Artist.swift */; };
+		65F965401CA32CE900227843 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F9653F1CA32CE900227843 /* Playlist.swift */; };
 		D156B0031CA08DC300131D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D156B0021CA08DC300131D47 /* AppDelegate.swift */; };
 		D156B0051CA08DC300131D47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D156B0041CA08DC300131D47 /* ViewController.swift */; };
 		D156B0081CA08DC300131D47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D156B0061CA08DC300131D47 /* Main.storyboard */; };
@@ -16,7 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		65F965331CA306C900227843 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		65F965331CA306C900227843 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65F965351CA3093600227843 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		65F965391CA30AFD00227843 /* ChordsWithLyrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordsWithLyrics.swift; sourceTree = "<group>"; };
+		65F9653B1CA30BC000227843 /* Chord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
+		65F9653D1CA32C2900227843 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		65F9653F1CA32CE900227843 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D156AFFF1CA08DC300131D47 /* RightMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D156B0021CA08DC300131D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D156B0041CA08DC300131D47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +94,12 @@
 		D1812A7B1CA307B500E1E04E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				65F965331CA306C900227843 /* Usuario.swift */,
+				65F965331CA306C900227843 /* User.swift */,
+				65F965391CA30AFD00227843 /* ChordsWithLyrics.swift */,
+				65F9653B1CA30BC000227843 /* Chord.swift */,
+				65F965351CA3093600227843 /* Music.swift */,
+				65F9653D1CA32C2900227843 /* Artist.swift */,
+				65F9653F1CA32CE900227843 /* Playlist.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -171,8 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D156B0051CA08DC300131D47 /* ViewController.swift in Sources */,
+				65F965361CA3093600227843 /* Music.swift in Sources */,
+				65F9653C1CA30BC000227843 /* Chord.swift in Sources */,
+				65F965401CA32CE900227843 /* Playlist.swift in Sources */,
+				65F9653A1CA30AFD00227843 /* ChordsWithLyrics.swift in Sources */,
 				D156B0031CA08DC300131D47 /* AppDelegate.swift in Sources */,
-				65F965341CA306C900227843 /* Usuario.swift in Sources */,
+				65F965341CA306C900227843 /* User.swift in Sources */,
+				65F9653E1CA32C2900227843 /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
