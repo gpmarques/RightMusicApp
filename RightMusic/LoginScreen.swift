@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginScreen: UIViewController, UITextFieldDelegate {
+class LoginScreen: UIViewController {
     
     // MARK: - View Controller Life Cicle -
     
@@ -20,7 +20,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         
         self.view.backgroundColor = UIColor.whiteColor()
         let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
-//        backgroundImage.image = UIImage(named: "backgroundImage")
+        //        backgroundImage.image = UIImage(named: "backgroundImage")
         
         self.view.addSubview(backgroundImage)
         
@@ -30,7 +30,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         loginButton.setTitle("Login", forState: .Normal)
         loginButton.frame = CGRectMake(100, 400, 100, 50)
         loginButton.addTarget(self, action: #selector(self.verifyLogin),
-                               forControlEvents: .TouchUpInside)
+                              forControlEvents: .TouchUpInside)
         self.view.addSubview(loginButton)
         
         // MARK: Sign Up Button
@@ -108,7 +108,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     //MARK: Login Function
     
-    func verifyLogin () {
+    func verifyLogin (sender: UIButton!) {
         
         
         
@@ -118,7 +118,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     func signUp (sender: UIButton!) {
         
-        self.presentViewController(SignUpScreen(), animated: true, completion: nil)
+        self.presentViewController(SignUpViewController(), animated: true, completion: nil)
         
     }
     
