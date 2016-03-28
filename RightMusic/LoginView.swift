@@ -10,90 +10,89 @@ import UIKit
 
 class LoginView: UIView {
     
-    var loginButton: UIButton!, signUpButton: UIButton!
-    
-    var usernameTextField: UITextField!, passwordTextField: UITextField!
+    var loginButton: UIButton!
+    var signUpButton: UIButton!
+    var usernameTextField: UITextField!
+    var passwordTextField: UITextField!
     
     init(view: UIView, parent: UIViewController) {
         super.init(frame: view.frame)
         
         // MARK: Background
         
-        view.backgroundColor = UIColor.whiteColor()
         let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
-        //        backgroundImage.image = UIImage(named: "backgroundImage")
+        backgroundImage.image = UIImage(named: "backgroundImage")
         
         // MARK: Login Button
         
-        let cGRectLoginButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.704225, view.frame.width*0.3125, view.frame.width*0.0625)
-        
         loginButton = UIButton(type: .System)
         loginButton.setTitle("Login", forState: .Normal)
-        loginButton.frame = cGRectLoginButton
+        loginButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        loginButton.backgroundColor = UIColor(colorLiteralRed: 1/255, green: 32/255, blue: 71/255, alpha: 1)
+        loginButton.frame = CGRectMake(view.frame.width*0.15, view.frame.height*0.621479, view.frame.width*0.703125, view.frame.width*0.13125)
+        loginButton.titleLabel?.font = UIFont(name: (loginButton.titleLabel!.font?.fontName)!, size: view.frame.height*0.0244565)
+        loginButton.layer.cornerRadius = 10
         
         // MARK: Sign Up Button
         
-        let cGRectSignUpButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.880282, view.frame.width*0.3125, view.frame.width*0.0625)
+        let cGRectSignUpButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.880282, view.frame.width*0.703125, view.frame.width*0.13125)
         
         signUpButton = UIButton(type: .System)
-        signUpButton.setTitle("Sign Up", forState: .Normal)
+        signUpButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        signUpButton.setTitle("Create your account!", forState: .Normal)
         signUpButton.frame = cGRectSignUpButton
         
         // MARK: Username Text Field
         
-        // Configuração do Text Field de nome de usuário
-        
-        // Configurar e copiar para o Text Field da senha (só mudar o placeholder)
-        
-        let cgRectUserName: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.176056, view.frame.width*0.9375, view.frame.width*0.0625)
-        
-        usernameTextField = UITextField(frame: cgRectUserName)
+        usernameTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.332746, view.frame.width*0.703125, view.frame.width*0.13125))
         usernameTextField.placeholder = "Username"
-        usernameTextField.font = UIFont.systemFontOfSize(15)
+        usernameTextField.textAlignment = NSTextAlignment.Center
+        usernameTextField.backgroundColor = UIColor(colorLiteralRed: 249/255, green: 249/255, blue: 249/255, alpha: 0.45)
+        usernameTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
-        usernameTextField.borderStyle = UITextBorderStyle.RoundedRect
-        
-        // Descomentar abaixo quando tiver a imagem do Text Field e configurar corretamente a imagem
+        usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
+        usernameTextField.layer.cornerRadius = 10
+        usernameTextField.clipsToBounds = true
+        usernameTextField.layer.borderWidth = 1
+        usernameTextField.layer.borderColor = UIColor(colorLiteralRed: 151/255, green: 151/255, blue: 151/255, alpha: 1).CGColor
         
         // Adicionando imagem dentro do Text Field do nome de usuário
         
-        //        let usernameIconView = UIImageView()
-        //        usernameIconView.image = UIImage(named: "usernameIcon")
-        //        let leftView = UIView()
-        //        leftView.addSubview(usernameIconView)
-        //        leftView.frame = CGRectMake(0, 0, 30, 50)
-        //        usernameIconView.frame = CGRectMake(0, 0, 20, 20)
-        //        usernameTextField.leftView = leftView
-        //        usernameTextField.leftView = usernameIconView
-        //        usernameTextField.leftViewMode = UITextFieldViewMode.Always
+        let usernameIconView = UIImageView()
+        usernameIconView.image = UIImage(named: "usernameIcon")
+        let usernameLeftView = UIView()
+        usernameLeftView.addSubview(usernameIconView)
+        usernameLeftView.frame = CGRectMake(0, 0, 30, view.frame.width*0.13125)
+        usernameIconView.frame = CGRectMake(view.frame.width*0.053125, view.frame.height*0.0176056, view.frame.width*0.0625, view.frame.height*0.0352113)
+        usernameTextField.leftView = usernameLeftView
+        usernameTextField.leftViewMode = UITextFieldViewMode.Always
         
         // MARK: Password Text Field
         
-        // Configuração do Text Field da senha
-        
-        let cgRectPassword: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.352113, view.frame.width*0.9375, view.frame.width*0.0625)
-        
-        
-        passwordTextField = UITextField(frame: cgRectPassword)
+        passwordTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.477113, view.frame.width*0.703125, view.frame.width*0.13125))
         passwordTextField.placeholder = "Password"
-        passwordTextField.font = UIFont.systemFontOfSize(15)
+        passwordTextField.textAlignment = NSTextAlignment.Center
+        passwordTextField.backgroundColor = UIColor(colorLiteralRed: 249/255, green: 249/255, blue: 249/255, alpha: 0.45)
+        passwordTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         passwordTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
-        passwordTextField.borderStyle = UITextBorderStyle.RoundedRect
+        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.clipsToBounds = true
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor(colorLiteralRed: 151/255, green: 151/255, blue: 151/255, alpha: 1).CGColor
         passwordTextField.secureTextEntry = true
-        
-        // Descomentar abaixo quando tiver a imagem do Text Field e configurar corretamente a imagem
         
         // Adicionando imagem dentro do Text Field da senha
         
-        //        let passwordIconView = UIImageView()
-        //        passwordIconView.image = UIImage(named: "passwordIcon")
-        //        let passwordLeftView = UIView()
-        //        passwordLeftView.addSubview(passwordIconView)
-        //        passwordLeftView.frame = CGRectMake(0, 0, 30, 50)
-        //        passwordIconView.frame = CGRectMake(0, 0, 20, 20)
-        //        passwordTextField.leftView = passwordLeftView
-        //        passwordTextField.leftView = passwordIconView
-        //        passwordTextField.leftViewMode = UITextFieldViewMode.Always
+        let passwordIconView = UIImageView()
+        passwordIconView.image = UIImage(named: "passwordIcon")
+        let passwordLeftView = UIView()
+        passwordLeftView.frame = CGRectMake(0, 0, 30, view.frame.width*0.13125)
+        passwordIconView.frame = CGRectMake(view.frame.width*0.053125, view.frame.height*0.0140845, view.frame.width*0.059375, view.frame.height*0.0440141)
+        passwordLeftView.addSubview(passwordIconView)
+        passwordTextField.leftView = passwordLeftView
+        passwordTextField.leftViewMode = UITextFieldViewMode.Always
+        
+        // MARK: - Add Subviews -
         
         view.addSubview(backgroundImage)
         view.addSubview(loginButton)
