@@ -45,7 +45,8 @@ class LoginViewController: UIViewController {
     func signUp (sender: UIButton!) {
         
         self.presentViewController(SignUpViewController(), animated: true, completion: nil)
-        
+//        self.presentViewController(HomeViewController(), animated: true, completion: nil)
+    
     }
     
 }
