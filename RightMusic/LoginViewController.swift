@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginScreen: UIViewController {
+class LoginViewController: UIViewController {
     
     // MARK: - View Controller Life Cicle -
     var loginView: LoginView!

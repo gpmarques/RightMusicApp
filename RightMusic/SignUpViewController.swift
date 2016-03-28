@@ -61,7 +61,7 @@ class SignUpViewController: UIViewController {
             else {
                 
                 let signUpSuccedded = UIAlertController(title: "Cadastro completo", message: "Você se cadastruo com sucesso. Pressione 'Confirmar' para continuar e fazer o seu login", preferredStyle: .Alert)
-                let confirmAction = UIAlertAction(title: "Confirmar", style: .Default, handler: { action in self.presentViewController(LoginScreen(), animated: true, completion: nil) } )
+                let confirmAction = UIAlertAction(title: "Confirmar", style: .Default, handler: { action in self.presentViewController(LoginViewController(), animated: true, completion: nil) } )
                 signUpSuccedded.addAction(confirmAction)
                 presentViewController(signUpSuccedded, animated: true, completion: nil)
                 
@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController {
     
     func backToLoginScreen (sender: UIButton!) {
         
-        self.presentViewController(LoginScreen(), animated: true, completion: nil)
+        self.presentViewController(LoginViewController(), animated: true, completion: nil)
         
     }
     

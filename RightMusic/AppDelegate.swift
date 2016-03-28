@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.makeKeyAndVisible()
-        let controller = LoginScreen()
+        let controller = LoginViewController()
         self.window?.rootViewController = controller
         
         return true
