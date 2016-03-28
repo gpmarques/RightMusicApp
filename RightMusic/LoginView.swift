@@ -1,52 +1,43 @@
 //
-//  ViewController.swift
+//  LoginView.swift
 //  RightMusic
 //
-//  Created by Guilherme Marques on 3/21/16.
+//  Created by Guilherme Marques on 3/28/16.
 //  Copyright © 2016 Guilherme Marques. All rights reserved.
 //
 
 import UIKit
 
-class LoginScreen: UIViewController {
+class LoginView: UIView {
     
-    // MARK: - View Controller Life Cicle -
-    var loginView: LoginView!
+    var loginButton: UIButton!, signUpButton: UIButton!
     
-    override func viewDidLoad() {   // Configurar todas as posições quando o protótipo estiver pronto
-        super.viewDidLoad()
+    var usernameTextField: UITextField!, passwordTextField: UITextField!
+    
+    init(view: UIView, parent: UIViewController) {
+        super.init(frame: view.frame)
         
-        loginView = LoginView(view: view, parent: self)
-        
-        loginView.loginButton.addTarget(self, action: #selector(self.verifyLogin),
-                              forControlEvents: .TouchUpInside)
-        loginView.signUpButton.addTarget(self, action: #selector(self.signUp),
-                               forControlEvents: .TouchUpInside)
         // MARK: Background
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.whiteColor()
         let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
         //        backgroundImage.image = UIImage(named: "backgroundImage")
         
-        self.view.addSubview(backgroundImage)
-        
         // MARK: Login Button
         
-        let loginButton = UIButton(type: .System)
+        let cGRectLoginButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.704225, view.frame.width*0.3125, view.frame.width*0.3125)
+        
+        loginButton = UIButton(type: .System)
         loginButton.setTitle("Login", forState: .Normal)
-        loginButton.frame = CGRectMake(100, 400, 100, 50)
-        loginButton.addTarget(self, action: #selector(self.verifyLogin),
-                              forControlEvents: .TouchUpInside)
-        self.view.addSubview(loginButton)
+        loginButton.frame = cGRectLoginButton
         
         // MARK: Sign Up Button
         
-        let signUpButton = UIButton(type: .System)
+        let cGRectSignUpButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.880282, view.frame.width*0.3125, view.frame.width*0.3125)
+        
+        signUpButton = UIButton(type: .System)
         signUpButton.setTitle("Sign Up", forState: .Normal)
-        signUpButton.frame = CGRectMake(100, 500, 100, 50)
-        signUpButton.addTarget(self, action: #selector(self.signUp),
-                               forControlEvents: .TouchUpInside)
-        self.view.addSubview(signUpButton)
+        signUpButton.frame = cGRectSignUpButton
         
         // MARK: Username Text Field
         
@@ -54,7 +45,9 @@ class LoginScreen: UIViewController {
         
         // Configurar e copiar para o Text Field da senha (só mudar o placeholder)
         
-        let usernameTextField = UITextField(frame: CGRectMake(20, 100, 300, 50))
+        let cgRectUserName: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.176056, view.frame.width*0.9375, view.frame.width*0.9375)
+        
+        usernameTextField = UITextField(frame: cgRectUserName)
         usernameTextField.placeholder = "Username"
         usernameTextField.font = UIFont.systemFontOfSize(15)
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
@@ -74,13 +67,14 @@ class LoginScreen: UIViewController {
         //        usernameTextField.leftView = usernameIconView
         //        usernameTextField.leftViewMode = UITextFieldViewMode.Always
         
-        self.view.addSubview(usernameTextField)
-        
         // MARK: Password Text Field
         
         // Configuração do Text Field da senha
         
-        let passwordTextField = UITextField(frame: CGRectMake(20, 200, 300, 50))
+        let cgRectPassword: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.352113, view.frame.width*0.9375, view.frame.width*0.9375)
+        
+        
+        passwordTextField = UITextField(frame: cgRectPassword)
         passwordTextField.placeholder = "Password"
         passwordTextField.font = UIFont.systemFontOfSize(15)
         passwordTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
@@ -101,32 +95,18 @@ class LoginScreen: UIViewController {
         //        passwordTextField.leftView = passwordIconView
         //        passwordTextField.leftViewMode = UITextFieldViewMode.Always
         
-        self.view.addSubview(passwordTextField)
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Functions -
-    
-    //MARK: Login Function
-    
-    func verifyLogin (sender: UIButton!) {
-        
+        view.addSubview(backgroundImage)
+        view.addSubview(loginButton)
+        view.addSubview(signUpButton)
+        view.addSubview(usernameTextField)
+        view.addSubview(passwordTextField)
         
         
     }
-    
-    // MARK: Sing Up Function
-    
-    func signUp (sender: UIButton!) {
-        
-        self.presentViewController(SignUpViewController(), animated: true, completion: nil)
-        
-    }
-    
-}
 
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
+}
