@@ -25,7 +25,7 @@ class LoginView: UIView {
         
         // MARK: Login Button
         
-        let cGRectLoginButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.704225, view.frame.width*0.3125, view.frame.width*0.3125)
+        let cGRectLoginButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.704225, view.frame.width*0.3125, view.frame.width*0.0625)
         
         loginButton = UIButton(type: .System)
         loginButton.setTitle("Login", forState: .Normal)
@@ -33,7 +33,7 @@ class LoginView: UIView {
         
         // MARK: Sign Up Button
         
-        let cGRectSignUpButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.880282, view.frame.width*0.3125, view.frame.width*0.3125)
+        let cGRectSignUpButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.880282, view.frame.width*0.3125, view.frame.width*0.0625)
         
         signUpButton = UIButton(type: .System)
         signUpButton.setTitle("Sign Up", forState: .Normal)
@@ -45,7 +45,7 @@ class LoginView: UIView {
         
         // Configurar e copiar para o Text Field da senha (só mudar o placeholder)
         
-        let cgRectUserName: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.176056, view.frame.width*0.9375, view.frame.width*0.9375)
+        let cgRectUserName: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.176056, view.frame.width*0.9375, view.frame.width*0.0625)
         
         usernameTextField = UITextField(frame: cgRectUserName)
         usernameTextField.placeholder = "Username"
@@ -71,7 +71,7 @@ class LoginView: UIView {
         
         // Configuração do Text Field da senha
         
-        let cgRectPassword: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.352113, view.frame.width*0.9375, view.frame.width*0.9375)
+        let cgRectPassword: CGRect! = CGRectMake(view.frame.width*0.0625, view.frame.height*0.352113, view.frame.width*0.9375, view.frame.width*0.0625)
         
         
         passwordTextField = UITextField(frame: cgRectPassword)
