@@ -24,9 +24,9 @@ class SignUpViewController: UIViewController {
         
         signUpView.missingFieldAlert.addAction(signUpView.okAction)
         signUpView.confirmPasswordAlert.addAction(signUpView.okAction)
-        signUpView.confirmButton.addTarget(self, action: #selector(self.confirmSignUp),
+        signUpView.confirmButton.addTarget(self, action: #selector(confirmSignUp),
                                 forControlEvents: .TouchUpInside)
-        signUpView.backToLoginScreenButton.addTarget(self, action: #selector(self.backToLoginScreen),
+        signUpView.backToLoginScreenButton.addTarget(self, action: #selector(backToLoginScreen),
                                           forControlEvents: .TouchUpInside)
         
     }

@@ -18,9 +18,9 @@ class LoginViewController: UIViewController {
         
         loginView = LoginView(view: view, parent: self)
         
-        loginView.loginButton.addTarget(self, action: #selector(self.verifyLogin),
+        loginView.loginButton.addTarget(self, action: #selector(verifyLogin),
                               forControlEvents: .TouchUpInside)
-        loginView.signUpButton.addTarget(self, action: #selector(self.signUp),
+        loginView.signUpButton.addTarget(self, action: #selector(signUp),
                                forControlEvents: .TouchUpInside)
         
     }

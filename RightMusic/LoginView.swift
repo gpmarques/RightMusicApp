@@ -12,6 +12,7 @@ class LoginView: UIView {
     
     var loginButton: UIButton!
     var signUpButton: UIButton!
+    var forgotPasswordButton: UIButton!
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
     
@@ -28,33 +29,40 @@ class LoginView: UIView {
         loginButton = UIButton(type: .System)
         loginButton.setTitle("Login", forState: .Normal)
         loginButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        loginButton.backgroundColor = UIColor(colorLiteralRed: 1/255, green: 32/255, blue: 71/255, alpha: 1)
+        loginButton.backgroundColor = confirmButtonBackgroundColor
         loginButton.frame = CGRectMake(view.frame.width*0.15, view.frame.height*0.621479, view.frame.width*0.703125, view.frame.width*0.13125)
         loginButton.titleLabel?.font = UIFont(name: (loginButton.titleLabel!.font?.fontName)!, size: view.frame.height*0.0244565)
         loginButton.layer.cornerRadius = 10
         
         // MARK: Sign Up Button
         
-        let cGRectSignUpButton: CGRect! = CGRectMake(view.frame.width*0.3125, view.frame.height*0.880282, view.frame.width*0.703125, view.frame.width*0.13125)
-        
         signUpButton = UIButton(type: .System)
         signUpButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         signUpButton.setTitle("Create your account!", forState: .Normal)
-        signUpButton.frame = cGRectSignUpButton
+        signUpButton.frame = CGRectMake(view.frame.width*0.53125, view.frame.height*0.708363, view.frame.width*0.40625, view.frame.width*0.13125)
+        signUpButton.titleLabel?.font = UIFont(name: (signUpButton.titleLabel!.font?.fontName)!, size: view.frame.height*0.0194565)
+        
+        // MARK: Forgot your password Button
+        
+        forgotPasswordButton = UIButton(type: .System)
+        forgotPasswordButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        forgotPasswordButton.setTitle("Forgot your passoword?", forState: .Normal)
+        forgotPasswordButton.frame = CGRectMake(view.frame.width*0.0625, view.frame.height*0.708363, view.frame.width*0.446875, view.frame.width*0.13125)
+        forgotPasswordButton.titleLabel?.font = UIFont(name: (forgotPasswordButton.titleLabel!.font?.fontName)!, size: view.frame.height*0.0194565)
         
         // MARK: Username Text Field
         
         usernameTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.332746, view.frame.width*0.703125, view.frame.width*0.13125))
         usernameTextField.placeholder = "Username"
         usernameTextField.textAlignment = NSTextAlignment.Center
-        usernameTextField.backgroundColor = UIColor(colorLiteralRed: 249/255, green: 249/255, blue: 249/255, alpha: 0.45)
+        usernameTextField.backgroundColor = textFieldsBackgroundColor
         usernameTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         usernameTextField.layer.cornerRadius = 10
         usernameTextField.clipsToBounds = true
         usernameTextField.layer.borderWidth = 1
-        usernameTextField.layer.borderColor = UIColor(colorLiteralRed: 151/255, green: 151/255, blue: 151/255, alpha: 1).CGColor
+        usernameTextField.layer.borderColor = textFieldBorderColor
         
         // Adicionando imagem dentro do Text Field do nome de usuário
         
@@ -72,13 +80,13 @@ class LoginView: UIView {
         passwordTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.477113, view.frame.width*0.703125, view.frame.width*0.13125))
         passwordTextField.placeholder = "Password"
         passwordTextField.textAlignment = NSTextAlignment.Center
-        passwordTextField.backgroundColor = UIColor(colorLiteralRed: 249/255, green: 249/255, blue: 249/255, alpha: 0.45)
+        passwordTextField.backgroundColor = textFieldsBackgroundColor
         passwordTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         passwordTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         passwordTextField.layer.cornerRadius = 10
         passwordTextField.clipsToBounds = true
         passwordTextField.layer.borderWidth = 1
-        passwordTextField.layer.borderColor = UIColor(colorLiteralRed: 151/255, green: 151/255, blue: 151/255, alpha: 1).CGColor
+        passwordTextField.layer.borderColor = textFieldBorderColor
         passwordTextField.secureTextEntry = true
         
         // Adicionando imagem dentro do Text Field da senha
@@ -97,6 +105,7 @@ class LoginView: UIView {
         view.addSubview(backgroundImage)
         view.addSubview(loginButton)
         view.addSubview(signUpButton)
+        view.addSubview(forgotPasswordButton)
         view.addSubview(usernameTextField)
         view.addSubview(passwordTextField)
         
