@@ -8,19 +8,27 @@
 
 import UIKit
 
-
-
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate {
     
     var homeView: HomeView!
     var highlightedSongs : UICollectionView!
-    var tableViewSongs : UITableView!
+    var tableViewArtistaBanda : UITableView!
+    var tableViewDificuldade : UITableView!
     let cellName: String = "Cell"
+    
+    struct musicas {
+        var sections: [String] =  ["Artistas / Bandas", "Dificuldade"]
+        var musics: [[String]] = [["Deep Purple", "Nickelback","Thirty Second to Mars"], ["Banda1","Banda2","Banda3"]]
+    }
+    
+    let music = musicas()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         homeView = HomeView(view: view, parent: self)
+        
+        // MARK: - CollectionView
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
@@ -37,14 +45,40 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         highlightedSongs.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: cellName)
         highlightedSongs.backgroundColor = azulClaro
         
+        // MARK: - TableViewArtistaBandas
+        
+        let cGRecttableview: CGRect! = CGRectMake(view.frame.width*0.0234375, view.frame.width*0.809375, view.frame.width*0.95625, view.frame.height*0.1875)
+        
+        tableViewArtistaBanda = UITableView(frame: cGRecttableview, style: UITableViewStyle.Plain)
+        tableViewArtistaBanda.dataSource = self
+        tableViewArtistaBanda.delegate = self
+        tableViewArtistaBanda.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellName)
+        tableViewArtistaBanda.tag = 0
+        tableViewArtistaBanda.tableHeaderView?.backgroundColor = azulClaro
 
+        // MARK: - tableViewDificuldade
         
+        let cGRecttableviewDificuldade:CGRect! = CGRectMake(view.frame.width*0.0234375, view.frame.height*0.682218, view.frame.width*0.95625, view.frame.height*0.1875)
         
+        tableViewDificuldade = UITableView(frame: cGRecttableviewDificuldade, style: UITableViewStyle.Plain)
+        tableViewDificuldade.dataSource = self
+        tableViewDificuldade.delegate = self
+        tableViewDificuldade.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellName)
+        tableViewDificuldade.tag = 1
+        tableViewDificuldade.tableHeaderView?.backgroundColor = azulClaro
+
+        // MARK: - addSubView
         
         view.addSubview(highlightedSongs)
+        view.addSubview(tableViewArtistaBanda)
+        view.addSubview(tableViewDificuldade)
+        
 
     }
 
+    // MARK: - Collection view data source
+
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -74,27 +108,39 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
-        
-        
-        return cell
+        if tableView.isEqual(tableViewArtistaBanda) {
+            return music.musics[0].count
+        } else {
+            return music.musics[1].count
+        }
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return "Blabla"
+        if tableView.isEqual(tableViewArtistaBanda) {
+            return music.sections[0]
+        } else {
+            return music.sections[1]
+        }
     }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
+        let row = indexPath.row
+        cell.backgroundColor = azulClaro
+        
+        if tableView.isEqual(tableViewArtistaBanda) {
+            cell.textLabel?.text = music.musics[0][row]
+        } else {
+            cell.textLabel?.text = music.musics[1][row]
+
+        }
+        return cell
+        
+    }
 
 }

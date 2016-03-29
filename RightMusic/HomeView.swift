@@ -16,8 +16,6 @@ class HomeView: UIView {
         
         view.backgroundColor = azulClaro
         
-
-        
     }
     
     required init(coder aDecoder: NSCoder) {
