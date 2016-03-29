@@ -16,6 +16,8 @@
 		65F965401CA32CE900227843 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F9653F1CA32CE900227843 /* Playlist.swift */; };
 		65F965441CA60FAE00227843 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965431CA60FAE00227843 /* SignUpViewController.swift */; };
 		65F965461CA616EB00227843 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965451CA616EB00227843 /* LoginViewController.swift */; };
+		770639611CAAF67B000E5C83 /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */; };
+		770639631CAAF7CA000E5C83 /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770639621CAAF7CA000E5C83 /* PlaylistsView.swift */; };
 		D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E841CA9809B009C7CEF /* LoginView.swift */; };
 		D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */; };
 		D11E4E891CA9A4B1009C7CEF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E881CA9A4B1009C7CEF /* HomeView.swift */; };
@@ -35,6 +37,8 @@
 		65F9653F1CA32CE900227843 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		65F965431CA60FAE00227843 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		65F965451CA616EB00227843 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
+		770639621CAAF7CA000E5C83 /* PlaylistsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
 		D11E4E841CA9809B009C7CEF /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D11E4E881CA9A4B1009C7CEF /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				65F965451CA616EB00227843 /* LoginViewController.swift */,
 				65F965431CA60FAE00227843 /* SignUpViewController.swift */,
 				D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */,
+				770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 				D11E4E841CA9809B009C7CEF /* LoginView.swift */,
 				65615D531CA9833E0087D40E /* SignUpView.swift */,
 				D11E4E881CA9A4B1009C7CEF /* HomeView.swift */,
+				770639621CAAF7CA000E5C83 /* PlaylistsView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -209,9 +215,11 @@
 				65F9653A1CA30AFD00227843 /* ChordsWithLyrics.swift in Sources */,
 				65615D541CA9833E0087D40E /* SignUpView.swift in Sources */,
 				D156B0031CA08DC300131D47 /* AppDelegate.swift in Sources */,
+				770639611CAAF67B000E5C83 /* PlaylistsViewController.swift in Sources */,
 				65F965341CA306C900227843 /* User.swift in Sources */,
 				D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */,
 				65F9653E1CA32C2900227843 /* Artist.swift in Sources */,
+				770639631CAAF7CA000E5C83 /* PlaylistsView.swift in Sources */,
 				D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
