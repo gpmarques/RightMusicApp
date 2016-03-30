@@ -103,7 +103,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func cellTapped() {
         
-        self.presentViewController(LoginViewController(), animated: true, completion: nil)
+        self.presentViewController(MusicViewController(), animated: true, completion: nil)
         
     }
     

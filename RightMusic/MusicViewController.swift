@@ -8,14 +8,21 @@
 
 import UIKit
 
-class MusicViewController: UIViewController {
+class MusicViewController: UIViewController, UIWebViewDelegate {
 
+    var musicView: MusicView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        musicView = MusicView(view: view, parent: self)
+        
     }
-
     
-
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        return true
+    }
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        print("Error")
+    }
 }
