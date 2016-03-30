@@ -12,6 +12,9 @@ class HomeView: UIView {
 
     var homeNavigationBar: UINavigationBar!
     var navItem: UINavigationItem!
+    var navtitleLabel: UILabel!
+    var separator: UIView!
+    var musicalTasteLabel: UILabel!
 
     
     init (view: UIView, parent: UIViewController) {
@@ -19,20 +22,50 @@ class HomeView: UIView {
         
         view.backgroundColor = azulClaro
         
+        // MARK: - titleLabel
+
+        let cGRectTitleLabel: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125/2)
+        
+        navtitleLabel = UILabel(frame: cGRectTitleLabel)
+        navtitleLabel.text = "Sugestões"
+        navtitleLabel.textColor = UIColor.whiteColor()
+        navtitleLabel.textAlignment = .Center
+        
         // MARK: - NavigationItem
         
         navItem = UINavigationItem()
-        navItem.title = "Sugestions"
+        navItem.titleView = navtitleLabel
+        
         
         // MARK: - NavigationBar  
         
-        let cGRectHomeNavBar: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125)
+        let cGRectHomeNavBar: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125/2)
         
         homeNavigationBar = UINavigationBar(frame:cGRectHomeNavBar)
         homeNavigationBar.items = [navItem]
         homeNavigationBar.translucent = false
         homeNavigationBar.barTintColor = azulTabeNavigation
         
+        navtitleLabel.center = CGPoint(x: homeNavigationBar.center.x, y: homeNavigationBar.center.y)
+        
+        // MARK: - Header Highlights
+        
+        let cGRectSeparator: CGRect! = CGRectMake(view.frame.width*0.0234375, view.frame.height*0.193662, view.frame.width*0.95625, 1)
+        
+        separator = UIView(frame: cGRectSeparator)
+        separator.backgroundColor = azulTabeNavigation
+        
+        // MARK: Musical Taste label
+        
+        let cGRectMusicalTaste: CGRect! = CGRectMake(view.frame.width*0.028125, view.frame.height*0.140845, view.frame.width*0.375, view.frame.height*0.06875)
+        
+        musicalTasteLabel = UILabel(frame: cGRectMusicalTaste)
+        musicalTasteLabel.text = "Gosto Musical"
+        musicalTasteLabel.textColor = azulTabeNavigation
+        musicalTasteLabel.textAlignment = .Left
+        
+        view.addSubview(separator)
+        view.addSubview(musicalTasteLabel)
         view.addSubview(homeNavigationBar)
         
 

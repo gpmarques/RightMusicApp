@@ -72,6 +72,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         view.addSubview(highlightedSongs)
         view.addSubview(tableViewArtistaBanda)
         view.addSubview(tableViewDificuldade)
+        homeView = HomeView(view: view, parent: self)
+
         
 
     }
@@ -135,8 +137,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if tableView.isEqual(tableViewArtistaBanda) {
             cell.textLabel?.text = music.musics[0][row]
+            cell.textLabel?.textColor = azulTabeNavigation
         } else {
             cell.textLabel?.text = music.musics[1][row]
+            cell.textLabel?.textColor = azulTabeNavigation
 
         }
         return cell
@@ -149,16 +153,22 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         header.backgroundColor = azulClaro
         
-        let labelHeader = UILabel(frame: CGRect(x: tableView.bounds.minX, y: tableView.bounds.minY, width: tableView.bounds.width, height: view.frame.height*0.0625))
+        let separator = UIView(frame: CGRectMake(0,view.frame.height*0.0625 - 8,tableView.bounds.width,1))
+        separator.backgroundColor = azulTabeNavigation
+        header.addSubview(separator)
+        
+        let labelHeader = UILabel(frame: CGRect(x: tableView.bounds.minX + 5, y: tableView.bounds.minY, width: tableView.bounds.width, height: view.frame.height*0.0625 - 5))
+        labelHeader.textAlignment = .Left
         
         if tableView.isEqual(tableViewArtistaBanda) {
     
-            labelHeader.text = "Artista/Bandas"
-            labelHeader.backgroundColor = azulClaro
+            labelHeader.text = music.sections[0]
+            labelHeader.textColor = azulTabeNavigation
             header.addSubview(labelHeader)
         } else {
             
-            labelHeader.text = "Dificuldade"
+            labelHeader.text = music.sections[1]
+            labelHeader.textColor = azulTabeNavigation
             header.addSubview(labelHeader)
         }
         
