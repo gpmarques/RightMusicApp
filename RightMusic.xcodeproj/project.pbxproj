@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		653E4D901CAC37090031396F /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D8F1CAC37090031396F /* ForgotPasswordView.swift */; };
+		653E4D921CAC44630031396F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */; };
 		65615D541CA9833E0087D40E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65615D531CA9833E0087D40E /* SignUpView.swift */; };
 		65F965341CA306C900227843 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965331CA306C900227843 /* User.swift */; };
 		65F965361CA3093600227843 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965351CA3093600227843 /* Music.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		653E4D8F1CAC37090031396F /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		65615D531CA9833E0087D40E /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		65F965331CA306C900227843 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65F965351CA3093600227843 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				65F965451CA616EB00227843 /* LoginViewController.swift */,
+				653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */,
 				65F965431CA60FAE00227843 /* SignUpViewController.swift */,
 				D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */,
 				770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */,
@@ -104,6 +109,7 @@
 			children = (
 				D156B00B1CA08DC300131D47 /* LaunchScreen.storyboard */,
 				D11E4E841CA9809B009C7CEF /* LoginView.swift */,
+				653E4D8F1CAC37090031396F /* ForgotPasswordView.swift */,
 				65615D531CA9833E0087D40E /* SignUpView.swift */,
 				D11E4E881CA9A4B1009C7CEF /* HomeView.swift */,
 				770639621CAAF7CA000E5C83 /* PlaylistsView.swift */,
@@ -208,6 +214,7 @@
 				65F965361CA3093600227843 /* Music.swift in Sources */,
 				65F965441CA60FAE00227843 /* SignUpViewController.swift in Sources */,
 				D11E4E891CA9A4B1009C7CEF /* HomeView.swift in Sources */,
+				653E4D901CAC37090031396F /* ForgotPasswordView.swift in Sources */,
 				D11E4E8B1CA9D416009C7CEF /* Colors.swift in Sources */,
 				65F965461CA616EB00227843 /* LoginViewController.swift in Sources */,
 				65F9653C1CA30BC000227843 /* Chord.swift in Sources */,
@@ -218,6 +225,7 @@
 				770639611CAAF67B000E5C83 /* PlaylistsViewController.swift in Sources */,
 				65F965341CA306C900227843 /* User.swift in Sources */,
 				D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */,
+				653E4D921CAC44630031396F /* ForgotPasswordViewController.swift in Sources */,
 				65F9653E1CA32C2900227843 /* Artist.swift in Sources */,
 				770639631CAAF7CA000E5C83 /* PlaylistsView.swift in Sources */,
 				D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */,

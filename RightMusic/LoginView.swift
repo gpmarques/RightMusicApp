@@ -55,7 +55,7 @@ class LoginView: UIView {
         usernameTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.332746, view.frame.width*0.703125, view.frame.width*0.13125))
         usernameTextField.placeholder = "Username"
         usernameTextField.textAlignment = NSTextAlignment.Center
-        usernameTextField.backgroundColor = textFieldsBackgroundColor
+        usernameTextField.backgroundColor = textFieldBackgroundColor
         usernameTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
@@ -80,7 +80,7 @@ class LoginView: UIView {
         passwordTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.477113, view.frame.width*0.703125, view.frame.width*0.13125))
         passwordTextField.placeholder = "Password"
         passwordTextField.textAlignment = NSTextAlignment.Center
-        passwordTextField.backgroundColor = textFieldsBackgroundColor
+        passwordTextField.backgroundColor = textFieldBackgroundColor
         passwordTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         passwordTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         passwordTextField.layer.cornerRadius = 10
@@ -113,7 +113,9 @@ class LoginView: UIView {
     }
 
     required init(coder aDecoder: NSCoder) {
+        
         fatalError("init(coder:) has not been implemented")
+        
     }
 
 

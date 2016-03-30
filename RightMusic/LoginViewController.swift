@@ -10,18 +10,19 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    // MARK: - View Controller Life Cicle -
     var loginView: LoginView!
     
-    override func viewDidLoad() {   // Configurar todas as posições quando o protótipo estiver pronto
+    // MARK: - View Controller Life Cicle -
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         loginView = LoginView(view: view, parent: self)
-        
         loginView.loginButton.addTarget(self, action: #selector(verifyLogin),
                               forControlEvents: .TouchUpInside)
         loginView.signUpButton.addTarget(self, action: #selector(signUp),
                                forControlEvents: .TouchUpInside)
+        loginView.forgotPasswordButton.addTarget(self, action: #selector(forgotPassword), forControlEvents: .TouchUpInside)
         
     }
     
@@ -32,7 +33,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Functions -
     
-    //MARK: Login Function
+    // MARK: Login Function
     
     func verifyLogin (sender: UIButton!) {
         
@@ -48,6 +49,14 @@ class LoginViewController: UIViewController {
         //self.presentViewController(HomeViewController(), animated: true, completion: nil)
         //self.presentViewController(PlaylistViewController(), animated: true, completion: nil)
     
+    }
+    
+    // MARK: Forgot Password Function
+    
+    func forgotPassword (sender: UIButton!) {
+        
+        self.presentViewController(ForgotPasswordViewController(), animated: true, completion: nil)
+        
     }
     
 }

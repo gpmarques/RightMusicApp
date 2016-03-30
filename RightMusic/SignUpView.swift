@@ -35,8 +35,8 @@ class SignUpView: UIView {
         
         // MARK: Alerts
         
-        missingFieldAlert = UIAlertController(title: "Erro", message: "Por favor preencha todos os campos para completar o cadastro", preferredStyle: .Alert)
-        confirmPasswordAlert = UIAlertController(title: "Erro", message: "The password is not matching the password confirmation", preferredStyle: .Alert)
+        missingFieldAlert = UIAlertController(title: "Error", message: "Please fill all fields to complete your sign up", preferredStyle: .Alert)
+        confirmPasswordAlert = UIAlertController(title: "Error", message: "The password is not matching the password confirmation", preferredStyle: .Alert)
         okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         
         // MARK: Sign Up Label
@@ -70,9 +70,8 @@ class SignUpView: UIView {
         nameTextField = UITextField(frame: CGRectMake(view.frame.width*0.14375, view.frame.height*0.184859, view.frame.width*0.703125, view.frame.width*0.13125))
         nameTextField.placeholder = "Name"
         nameTextField.textAlignment = NSTextAlignment.Center
-        nameTextField.backgroundColor = textFieldsBackgroundColor
+        nameTextField.backgroundColor = textFieldBackgroundColor
         nameTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
-        nameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         nameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         nameTextField.layer.cornerRadius = 10
         nameTextField.clipsToBounds = true
@@ -84,9 +83,8 @@ class SignUpView: UIView {
         usernameTextField = UITextField(frame: CGRectMake(view.frame.width*0.14375, view.frame.height*0.299296, view.frame.width*0.703125, view.frame.width*0.13125))
         usernameTextField.placeholder = "Username"
         usernameTextField.textAlignment = NSTextAlignment.Center
-        usernameTextField.backgroundColor = textFieldsBackgroundColor
+        usernameTextField.backgroundColor = textFieldBackgroundColor
         usernameTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
-        usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         usernameTextField.layer.cornerRadius = 10
         usernameTextField.clipsToBounds = true
@@ -98,7 +96,7 @@ class SignUpView: UIView {
         emailTextField = UITextField(frame: CGRectMake(view.frame.width*0.14375, view.frame.height*0.413732, view.frame.width*0.703125, view.frame.width*0.13125))
         emailTextField.placeholder = "E-mail"
         emailTextField.textAlignment = NSTextAlignment.Center
-        emailTextField.backgroundColor = textFieldsBackgroundColor
+        emailTextField.backgroundColor = textFieldBackgroundColor
         emailTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         emailTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         emailTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
@@ -112,7 +110,7 @@ class SignUpView: UIView {
         passwordTextField = UITextField(frame: CGRectMake(view.frame.width*0.14375, view.frame.height*0.528169, view.frame.width*0.703125, view.frame.width*0.13125))
         passwordTextField.placeholder = "Password"
         passwordTextField.textAlignment = NSTextAlignment.Center
-        passwordTextField.backgroundColor = textFieldsBackgroundColor
+        passwordTextField.backgroundColor = textFieldBackgroundColor
         passwordTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         passwordTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         passwordTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
@@ -127,7 +125,7 @@ class SignUpView: UIView {
         passwordConfirmationTextField = UITextField(frame: CGRectMake(view.frame.width*0.14375, view.frame.height*0.642606, view.frame.width*0.703125, view.frame.width*0.13125))
         passwordConfirmationTextField.placeholder = "Password Confirmation"
         passwordConfirmationTextField.textAlignment = NSTextAlignment.Center
-        passwordConfirmationTextField.backgroundColor = textFieldsBackgroundColor
+        passwordConfirmationTextField.backgroundColor = textFieldBackgroundColor
         passwordConfirmationTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         passwordConfirmationTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
         passwordConfirmationTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
