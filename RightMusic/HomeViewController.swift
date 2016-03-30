@@ -142,5 +142,28 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
         
     }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let header = UIView(frame: CGRect(x: tableView.bounds.minX, y: tableView.bounds.minY, width: tableView.bounds.width, height: view.frame.height*0.0625))
+
+        header.backgroundColor = azulClaro
+        
+        let labelHeader = UILabel(frame: CGRect(x: tableView.bounds.minX, y: tableView.bounds.minY, width: tableView.bounds.width, height: view.frame.height*0.0625))
+        
+        if tableView.isEqual(tableViewArtistaBanda) {
+    
+            labelHeader.text = "Artista/Bandas"
+            labelHeader.backgroundColor = azulClaro
+            header.addSubview(labelHeader)
+        } else {
+            
+            labelHeader.text = "Dificuldade"
+            header.addSubview(labelHeader)
+        }
+        
+        return header
+        
+    }
 
 }
