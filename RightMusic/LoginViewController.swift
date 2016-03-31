@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginView = LoginView(view: view, parent: self)
+        loginView.missingFieldAlert.addAction(loginView.okAction)
+        loginView.wrongUsernameOrPasswordAlert.addAction(loginView.okAction)
         loginView.loginButton.addTarget(self, action: #selector(verifyLogin),
                               forControlEvents: .TouchUpInside)
         loginView.signUpButton.addTarget(self, action: #selector(signUp),
@@ -37,7 +39,26 @@ class LoginViewController: UIViewController {
     
     func verifyLogin (sender: UIButton!) {
         
+        let usernameIndex = userList.indexOf({$0.username == loginView.usernameTextField.text})
         
+        if loginView.usernameTextField.text?.isEmpty == true || loginView.passwordTextField.text?.isEmpty == true {
+            
+            presentViewController(loginView.missingFieldAlert, animated: true, completion: nil)
+            
+        }
+        else {
+            
+            if usernameIndex != nil && userList[usernameIndex!].password == loginView.passwordTextField.text {
+                
+                presentViewController(HomeViewController(), animated: true, completion: nil)
+                
+            }
+            else {
+                
+                presentViewController(loginView.wrongUsernameOrPasswordAlert, animated: true, completion: nil)
+                
+            }
+        }
         
     }
     

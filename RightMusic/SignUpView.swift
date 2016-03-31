@@ -14,6 +14,8 @@ class SignUpView: UIView {
     
     var missingFieldAlert: UIAlertController!
     var confirmPasswordAlert: UIAlertController!
+    var existingUsernameAlert: UIAlertController!
+    var existingEmailAlert: UIAlertController!
     var okAction: UIAlertAction!
     var signUpLabel: UILabel!
     var confirmButton: UIButton!
@@ -35,8 +37,10 @@ class SignUpView: UIView {
         
         // MARK: Alerts
         
-        missingFieldAlert = UIAlertController(title: "Error", message: "Please fill all fields to complete your sign up", preferredStyle: .Alert)
-        confirmPasswordAlert = UIAlertController(title: "Error", message: "The password is not matching the password confirmation", preferredStyle: .Alert)
+        missingFieldAlert = UIAlertController(title: "Blank Field", message: "Please fill all fields to complete your sign up", preferredStyle: .Alert)
+        confirmPasswordAlert = UIAlertController(title: "Wrong Password Confirmation", message: "The password confirmation is not matching the password you entered", preferredStyle: .Alert)
+        existingUsernameAlert = UIAlertController(title: "Username already exists", message: "This username already exists, please chose another one.", preferredStyle: .Alert)
+        existingEmailAlert = UIAlertController(title: "E-mail already exists", message: "This e-mail already exists, please chose another one.", preferredStyle: .Alert)
         okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         
         // MARK: Sign Up Label

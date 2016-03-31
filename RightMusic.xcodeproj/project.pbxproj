@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		653E4D901CAC37090031396F /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D8F1CAC37090031396F /* ForgotPasswordView.swift */; };
 		653E4D921CAC44630031396F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */; };
+		653E4D941CAC77EA0031396F /* GlobalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D931CAC77EA0031396F /* GlobalVar.swift */; };
 		65615D541CA9833E0087D40E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65615D531CA9833E0087D40E /* SignUpView.swift */; };
 		65F965341CA306C900227843 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965331CA306C900227843 /* User.swift */; };
 		65F965361CA3093600227843 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965351CA3093600227843 /* Music.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		653E4D8F1CAC37090031396F /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		653E4D931CAC77EA0031396F /* GlobalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
 		65615D531CA9833E0087D40E /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		65F965331CA306C900227843 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65F965351CA3093600227843 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				65F965351CA3093600227843 /* Music.swift */,
 				65F9653D1CA32C2900227843 /* Artist.swift */,
 				65F9653F1CA32CE900227843 /* Playlist.swift */,
+				653E4D931CAC77EA0031396F /* GlobalVar.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				65F965361CA3093600227843 /* Music.swift in Sources */,
 				65F965441CA60FAE00227843 /* SignUpViewController.swift in Sources */,
+				653E4D941CAC77EA0031396F /* GlobalVar.swift in Sources */,
 				D11E4E891CA9A4B1009C7CEF /* HomeView.swift in Sources */,
 				653E4D901CAC37090031396F /* ForgotPasswordView.swift in Sources */,
 				D11E4E8B1CA9D416009C7CEF /* Colors.swift in Sources */,

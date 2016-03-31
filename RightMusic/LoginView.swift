@@ -15,6 +15,9 @@ class LoginView: UIView {
     var forgotPasswordButton: UIButton!
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
+    var missingFieldAlert: UIAlertController!
+    var wrongUsernameOrPasswordAlert: UIAlertController!
+    var okAction: UIAlertAction!
     
     init(view: UIView, parent: UIViewController) {
         super.init(frame: view.frame)
@@ -23,6 +26,12 @@ class LoginView: UIView {
         
         let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
         backgroundImage.image = UIImage(named: "backgroundImage")
+        
+        // MARK: Alerts
+        
+        missingFieldAlert = UIAlertController(title: "Blank field", message: "Please fill all text fields to login", preferredStyle: .Alert)
+        wrongUsernameOrPasswordAlert = UIAlertController(title: "Wrong Username or Password", message: "Please verify your username and password nd try again", preferredStyle: .Alert)
+        okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         
         // MARK: Login Button
         
