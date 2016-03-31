@@ -47,6 +47,8 @@ class ForgotPasswordView: UIView {
         emailTextField = UITextField(frame: CGRectMake(view.frame.width*0.14375, view.frame.height*0.387324, view.frame.width*0.703125, view.frame.width*0.13125))
         emailTextField.placeholder = "E-mail"
         emailTextField.textAlignment = NSTextAlignment.Center
+        emailTextField.autocapitalizationType = .None
+        emailTextField.autocorrectionType = .No
         emailTextField.backgroundColor = textFieldBackgroundColor
         emailTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         emailTextField.clearButtonMode = UITextFieldViewMode.WhileEditing

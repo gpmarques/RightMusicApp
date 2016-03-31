@@ -32,9 +32,9 @@ class ForgotPasswordViewController: UIViewController {
     
     // MARK: Send E-mail Function
     
-    func sendEmail () {
+    func sendEmail (sender: UIButton) {
         
-        
+       // Precisa de um servidor para fazer isso
         
     }
     

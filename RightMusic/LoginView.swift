@@ -15,6 +15,9 @@ class LoginView: UIView {
     var forgotPasswordButton: UIButton!
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
+    var missingFieldAlert: UIAlertController!
+    var wrongUsernameOrPasswordAlert: UIAlertController!
+    var okAction: UIAlertAction!
     
     init(view: UIView, parent: UIViewController) {
         super.init(frame: view.frame)
@@ -23,6 +26,12 @@ class LoginView: UIView {
         
         let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
         backgroundImage.image = UIImage(named: "backgroundImage")
+        
+        // MARK: Alerts
+        
+        missingFieldAlert = UIAlertController(title: "Blank field", message: "Please fill all text fields to login", preferredStyle: .Alert)
+        wrongUsernameOrPasswordAlert = UIAlertController(title: "Wrong Username or Password", message: "Please verify your username and password nd try again", preferredStyle: .Alert)
+        okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         
         // MARK: Login Button
         
@@ -55,6 +64,8 @@ class LoginView: UIView {
         usernameTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.332746, view.frame.width*0.703125, view.frame.width*0.13125))
         usernameTextField.placeholder = "Username"
         usernameTextField.textAlignment = NSTextAlignment.Center
+        usernameTextField.autocapitalizationType = .None
+        usernameTextField.autocorrectionType = .No
         usernameTextField.backgroundColor = textFieldBackgroundColor
         usernameTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         usernameTextField.clearButtonMode = UITextFieldViewMode.WhileEditing
@@ -80,6 +91,8 @@ class LoginView: UIView {
         passwordTextField = UITextField(frame: CGRectMake(view.frame.width*0.15, view.frame.height*0.477113, view.frame.width*0.703125, view.frame.width*0.13125))
         passwordTextField.placeholder = "Password"
         passwordTextField.textAlignment = NSTextAlignment.Center
+        passwordTextField.autocapitalizationType = .None
+        passwordTextField.autocorrectionType = .No
         passwordTextField.backgroundColor = textFieldBackgroundColor
         passwordTextField.font = UIFont.systemFontOfSize(view.frame.height*0.0244565)
         passwordTextField.clearButtonMode = UITextFieldViewMode.WhileEditing

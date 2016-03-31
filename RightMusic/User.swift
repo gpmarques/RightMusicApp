@@ -9,19 +9,19 @@
 import Foundation
 
 
-class User {
+public class User {
     
     var name: String
-    var nickname: String
+    var username: String
     var email: String
     var password: String
     var profilePicture: String?
     var playlist: [Playlist] = [Playlist(title: "Favorites")]
     
-    init (name: String, nickname: String, email: String, password: String) {
+    public init (name: String, username: String, email: String, password: String) {
         
         self.name = name
-        self.nickname = nickname
+        self.username = username
         self.email = email
         self.password = password
         
