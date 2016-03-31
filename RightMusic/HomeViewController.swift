@@ -43,7 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         highlightedSongs.dataSource = self
         highlightedSongs.delegate = self
         highlightedSongs.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: cellName)
-        highlightedSongs.backgroundColor = azulClaro
+        highlightedSongs.backgroundColor = lightBlue
         
         // MARK: - TableViewArtistaBandas
         
@@ -54,7 +54,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         tableViewArtistaBanda.delegate = self
         tableViewArtistaBanda.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellName)
         tableViewArtistaBanda.tag = 0
-        tableViewArtistaBanda.tableHeaderView?.backgroundColor = azulClaro
+        tableViewArtistaBanda.tableHeaderView?.backgroundColor = lightBlue
 
         // MARK: - tableViewDificuldade
         
@@ -65,7 +65,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         tableViewDificuldade.delegate = self
         tableViewDificuldade.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellName)
         tableViewDificuldade.tag = 1
-        tableViewDificuldade.tableHeaderView?.backgroundColor = azulClaro
+        tableViewDificuldade.tableHeaderView?.backgroundColor = lightBlue
 
         // MARK: - addSubView
         
@@ -133,14 +133,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
   
         let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
         let row = indexPath.row
-        cell.backgroundColor = azulClaro
+        cell.backgroundColor = lightBlue
         
         if tableView.isEqual(tableViewArtistaBanda) {
             cell.textLabel?.text = music.musics[0][row]
-            cell.textLabel?.textColor = azulTabeNavigation
+            cell.textLabel?.textColor = tabAndNavigationBlue
         } else {
             cell.textLabel?.text = music.musics[1][row]
-            cell.textLabel?.textColor = azulTabeNavigation
+            cell.textLabel?.textColor = tabAndNavigationBlue
 
         }
         return cell
@@ -151,10 +151,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let header = UIView(frame: CGRect(x: tableView.bounds.minX, y: tableView.bounds.minY, width: tableView.bounds.width, height: view.frame.height*0.0625))
 
-        header.backgroundColor = azulClaro
+        header.backgroundColor = lightBlue
         
         let separator = UIView(frame: CGRectMake(0,view.frame.height*0.0625 - 8,tableView.bounds.width,1))
-        separator.backgroundColor = azulTabeNavigation
+        separator.backgroundColor = tabAndNavigationBlue
         header.addSubview(separator)
         
         let labelHeader = UILabel(frame: CGRect(x: tableView.bounds.minX + 5, y: tableView.bounds.minY, width: tableView.bounds.width, height: view.frame.height*0.0625 - 5))
@@ -163,12 +163,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if tableView.isEqual(tableViewArtistaBanda) {
     
             labelHeader.text = music.sections[0]
-            labelHeader.textColor = azulTabeNavigation
+            labelHeader.textColor = tabAndNavigationBlue
             header.addSubview(labelHeader)
         } else {
             
             labelHeader.text = music.sections[1]
-            labelHeader.textColor = azulTabeNavigation
+            labelHeader.textColor = tabAndNavigationBlue
             header.addSubview(labelHeader)
         }
         

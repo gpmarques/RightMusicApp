@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MusicViewController: UIViewController, UIWebViewDelegate {
 
@@ -15,7 +16,19 @@ class MusicViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = lightBlue
+        
         musicView = MusicView(view: view, parent: self)
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(MusicViewController.playTapped))
+        musicView.playButton.addGestureRecognizer(tapRecognizer)
+        
+        
+    }
+    
+    func playTapped() {
+        
+        let safariVC = SFSafariViewController(URL: NSURL(string: "https://www.youtube.com/embed/-VMFdpdDYYA")!)
+        self.presentViewController(safariVC, animated: true, completion: nil)
         
     }
     
@@ -25,4 +38,5 @@ class MusicViewController: UIViewController, UIWebViewDelegate {
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         print("Error")
     }
+
 }

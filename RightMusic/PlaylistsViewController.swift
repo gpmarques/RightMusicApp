@@ -26,7 +26,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableViewPlaylist.dataSource    =   self
         
         tableViewPlaylist.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableViewPlaylist.backgroundColor = azulClaro
+        tableViewPlaylist.backgroundColor = lightBlue
         
         playView = PlaylistsView(view: view, parent: self)
     
@@ -45,7 +45,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         cell.textLabel?.text = self.items[indexPath.row]
         
-        cell.backgroundColor = azulClaro
+        cell.backgroundColor = lightBlue
         
         return cell
         

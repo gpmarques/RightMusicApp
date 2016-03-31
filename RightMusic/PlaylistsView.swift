@@ -28,7 +28,7 @@ class PlaylistsView: UIView {
         //navItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
         playlistNavigationBar.items = [navItem]
         playlistNavigationBar.translucent = false
-        playlistNavigationBar.barTintColor = azulTabeNavigation
+        playlistNavigationBar.barTintColor = tabAndNavigationBlue
         
         view.addSubview(playlistNavigationBar)
         

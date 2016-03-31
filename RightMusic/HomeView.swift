@@ -20,7 +20,7 @@ class HomeView: UIView {
     init (view: UIView, parent: UIViewController) {
         super.init(frame: view.frame)
         
-        view.backgroundColor = azulClaro
+        view.backgroundColor = lightBlue
         
         // MARK: - titleLabel
 
@@ -44,7 +44,7 @@ class HomeView: UIView {
         homeNavigationBar = UINavigationBar(frame:cGRectHomeNavBar)
         homeNavigationBar.items = [navItem]
         homeNavigationBar.translucent = false
-        homeNavigationBar.barTintColor = azulTabeNavigation
+        homeNavigationBar.barTintColor = tabAndNavigationBlue
         
         navtitleLabel.center = CGPoint(x: homeNavigationBar.center.x, y: homeNavigationBar.center.y)
         
@@ -53,7 +53,7 @@ class HomeView: UIView {
         let cGRectSeparator: CGRect! = CGRectMake(view.frame.width*0.0234375, view.frame.height*0.193662, view.frame.width*0.95625, 1)
         
         separator = UIView(frame: cGRectSeparator)
-        separator.backgroundColor = azulTabeNavigation
+        separator.backgroundColor = tabAndNavigationBlue
         
         // MARK: Musical Taste label
         
@@ -61,7 +61,7 @@ class HomeView: UIView {
         
         musicalTasteLabel = UILabel(frame: cGRectMusicalTaste)
         musicalTasteLabel.text = "Gosto Musical"
-        musicalTasteLabel.textColor = azulTabeNavigation
+        musicalTasteLabel.textColor = tabAndNavigationBlue
         musicalTasteLabel.textAlignment = .Left
         
         view.addSubview(separator)
