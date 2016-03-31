@@ -12,7 +12,7 @@ class PlaylistsView: UIView {
     
     
     var playlistNavigationBar: UINavigationBar!
-    var addButton: UIBarButtonItem!
+    //var addButton: UIBarButtonItem!
     var navItem: UINavigationItem!
     
     init (view: UIView, parent: UIViewController) {
@@ -21,14 +21,20 @@ class PlaylistsView: UIView {
         view.backgroundColor = UIColor.whiteColor()
         
         navItem = UINavigationItem()
-        navItem.rightBarButtonItem = addButton
-        addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PlaylistsView.addNewPlaylist))
+        //navItem.rightBarButtonItem = addButton
+        //addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PlaylistsView.addNewPlaylist))
         playlistNavigationBar = UINavigationBar(frame: CGRectMake(0, 18, view.frame.width, 40))
         navItem.title = "Playlists"
+        
+        //playlistNavigationBar.topItem?.title = "Playlists"
+        //playlistNavigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
         //navItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+        
         playlistNavigationBar.items = [navItem]
         playlistNavigationBar.translucent = false
         playlistNavigationBar.barTintColor = azulTabeNavigation
+        
         
         view.addSubview(playlistNavigationBar)
         

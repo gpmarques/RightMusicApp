@@ -20,6 +20,7 @@
 		65F965461CA616EB00227843 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965451CA616EB00227843 /* LoginViewController.swift */; };
 		770639611CAAF67B000E5C83 /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */; };
 		770639631CAAF7CA000E5C83 /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770639621CAAF7CA000E5C83 /* PlaylistsView.swift */; };
+		770639651CAC5F80000E5C83 /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770639641CAC5F80000E5C83 /* DashboardTabBarController.swift */; };
 		D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E841CA9809B009C7CEF /* LoginView.swift */; };
 		D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */; };
 		D11E4E891CA9A4B1009C7CEF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E881CA9A4B1009C7CEF /* HomeView.swift */; };
@@ -45,6 +46,7 @@
 		65F965451CA616EB00227843 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
 		770639621CAAF7CA000E5C83 /* PlaylistsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
+		770639641CAC5F80000E5C83 /* DashboardTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
 		D11E4E841CA9809B009C7CEF /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D11E4E881CA9A4B1009C7CEF /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				65F965451CA616EB00227843 /* LoginViewController.swift */,
+				770639641CAC5F80000E5C83 /* DashboardTabBarController.swift */,
 				653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */,
 				65F965431CA60FAE00227843 /* SignUpViewController.swift */,
 				D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */,
@@ -139,9 +142,9 @@
 		D1812A7C1CA307CC00E1E04E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D156B0021CA08DC300131D47 /* AppDelegate.swift */,
 				D156B0091CA08DC300131D47 /* Assets.xcassets */,
 				D156B00E1CA08DC300131D47 /* Info.plist */,
-				D156B0021CA08DC300131D47 /* AppDelegate.swift */,
 				D11E4E8A1CA9D416009C7CEF /* Colors.swift */,
 			);
 			name = "Supporting Files";
@@ -226,6 +229,7 @@
 				65F965461CA616EB00227843 /* LoginViewController.swift in Sources */,
 				65F9653C1CA30BC000227843 /* Chord.swift in Sources */,
 				65F965401CA32CE900227843 /* Playlist.swift in Sources */,
+				770639651CAC5F80000E5C83 /* DashboardTabBarController.swift in Sources */,
 				65F9653A1CA30AFD00227843 /* ChordsWithLyrics.swift in Sources */,
 				65615D541CA9833E0087D40E /* SignUpView.swift in Sources */,
 				D156B0031CA08DC300131D47 /* AppDelegate.swift in Sources */,

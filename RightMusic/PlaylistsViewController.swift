@@ -16,7 +16,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
     var tableViewPlaylist: UITableView  =   UITableView()
     var playView: PlaylistsView!
     
-    var items: [String] = ["Nova Playlist"]
+    var items: [String] = ["Nova Playlist", "1", "2", "3", "4", "5", "6", "7", "8"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +24,13 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableViewPlaylist.frame         =   CGRectMake(0, 58, view.frame.width, view.frame.height) // x, y, width, height
         tableViewPlaylist.delegate      =   self
         tableViewPlaylist.dataSource    =   self
-        
         tableViewPlaylist.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableViewPlaylist.backgroundColor = azulClaro
         
         playView = PlaylistsView(view: view, parent: self)
     
-    
-        self.view.addSubview(tableViewPlaylist)
         self.view.addSubview(playView)
+        self.view.addSubview(tableViewPlaylist)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,13 +43,32 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         cell.textLabel?.text = self.items[indexPath.row]
         
+        cell.textLabel!.font = UIFont.systemFontOfSize(18)
+        
         cell.backgroundColor = azulClaro
+        
+        if indexPath.row == 0 {
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.cellTapped))
+            cell.addGestureRecognizer(tapRecognizer)
+        
+        }
+        
+        if (indexPath.row == 0) {
+            let cellButton: UIButton!
+            cellButton = UIButton(frame: CGRectMake(10, 10, 30, 30))
+            cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
+            cell.contentView.addSubview(cellButton)
+            
+        }
         
         return cell
         
     }
     
-
+    func cellTapped() {
+        
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
