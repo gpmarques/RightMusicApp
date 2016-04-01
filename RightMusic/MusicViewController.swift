@@ -9,9 +9,10 @@
 import UIKit
 import SafariServices
 
-class MusicViewController: UIViewController, UIWebViewDelegate {
+class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelegate {
 
     var musicView: MusicView!
+    var lineNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,33 @@ class MusicViewController: UIViewController, UIWebViewDelegate {
         musicView = MusicView(view: view, parent: self)
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(MusicViewController.playTapped))
         musicView.playButton.addGestureRecognizer(tapRecognizer)
+        musicView.textViewLyrics.delegate = self
+        musicView.textViewChords.delegate = self
         
+        if let aStreamReader = StreamReader(path: "/Users/gabrielbendia/Documents/RightMusicApp/RightMusic/Someday_Nickelback.txt") {
+            defer {
+                
+                aStreamReader.close()
+                
+            }
+            while let line = aStreamReader.nextLine() {
+                if lineNumber%2 == 0 {
+                    
+                    musicView.textViewChords.text = musicView.textViewChords.text + line + "\n\n"
+                    lineNumber += 1
+                    
+                }
+                else {
+                    
+                    musicView.textViewLyrics.text = musicView.textViewLyrics.text + "\n" + line + "\n"
+                    lineNumber += 1
+                    
+                }
+            }
+        }
+        
+        musicView.textViewChords.text = musicView.textViewChords.text.stringByReplacingOccurrencesOfString("\\", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        musicView.textViewLyrics.text = musicView.textViewLyrics.text.stringByReplacingOccurrencesOfString("\\", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
     }
     
@@ -42,6 +69,19 @@ class MusicViewController: UIViewController, UIWebViewDelegate {
         
         print("Error")
         
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView == musicView.textViewChords {
+            
+            musicView.textViewLyrics.contentOffset = musicView.textViewChords.contentOffset
+            
+        }
+        else {
+            
+            musicView.textViewChords.contentOffset = musicView.textViewLyrics.contentOffset
+            
+        }
     }
 
 }

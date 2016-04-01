@@ -12,10 +12,11 @@ import SafariServices
 class MusicView: UIView {
     
     var albumImage: UIImageView!, playButton: UIImageView!
-
     var labelMusicName: UILabel!, labelArtistName: UILabel!
     var youtubeMusic: UIWebView!
     var toneButton: UIButton!, instrumentButton: UIButton!
+    var textViewChords: UITextView!
+    var textViewLyrics: UITextView!
     
     init (view: UIView, parent: MusicViewController) {
         super.init(frame: view.frame)
@@ -84,6 +85,23 @@ class MusicView: UIView {
         instrumentButton.layer.borderColor = tabAndNavigationBlue.CGColor
         instrumentButton.layer.borderWidth = 1.0
         
+        // MARK: Chords Text View
+        
+        textViewChords = UITextView(frame: CGRectMake(view.frame.width*0.0625, view.frame.height*0.475352, view.frame.width*0.875, view.frame.height - view.frame.height*0.475352))
+        textViewChords.textColor = UIColor.orangeColor()
+        textViewChords.backgroundColor = UIColor.clearColor()
+        textViewChords.editable = false
+        textViewChords.font = UIFont(name: "CourierNewPS-BoldMT", size: view.frame.height*0.0176056)
+        textViewChords.text = ""
+        
+        // MARK: Lyrics Text View
+        
+        textViewLyrics = UITextView(frame: CGRectMake(view.frame.width*0.0625, view.frame.height*0.475352, view.frame.width*0.875, view.frame.height - view.frame.height*0.475352))
+        textViewLyrics.backgroundColor = UIColor.clearColor()
+        textViewLyrics.textColor = UIColor.blackColor()
+        textViewLyrics.editable = false
+        textViewLyrics.font = UIFont(name: "Courier New", size: view.frame.height*0.0176056)
+        textViewLyrics.text = ""
         
         // MARK: addSubViews
         
@@ -94,6 +112,8 @@ class MusicView: UIView {
         view.addSubview(labelArtistName)
         view.addSubview(toneButton)
         view.addSubview(instrumentButton)
+        view.addSubview(textViewChords)
+        view.addSubview(textViewLyrics)
         
     }
     
