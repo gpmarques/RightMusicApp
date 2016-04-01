@@ -33,11 +33,11 @@ enum Tone: String {
 class ChordsWithLyrics {
     
     var lyrics: String
-    var chords: [Chord]
+    var chords: String //[Chord]
     var currentTone: Tone
     var originalTone: Tone
     
-    init (lyrics: String, chords: [Chord], currentTone: Tone, originalTone: Tone) {
+    init (lyrics: String, chords: String /*[Chord]*/, currentTone: Tone, originalTone: Tone) {
         
         self.lyrics = lyrics
         self.chords = chords

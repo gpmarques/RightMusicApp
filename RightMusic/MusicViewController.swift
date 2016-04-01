@@ -33,10 +33,15 @@ class MusicViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
         return true
+        
     }
+    
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        
         print("Error")
+        
     }
 
 }
