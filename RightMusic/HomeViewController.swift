@@ -55,7 +55,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         tableViewArtistaBanda.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellName)
         tableViewArtistaBanda.tag = 0
         tableViewArtistaBanda.tableHeaderView?.backgroundColor = lightBlue
-
+        tableViewArtistaBanda.alwaysBounceVertical = false
+        tableViewArtistaBanda.bounces = false
         // MARK: - tableViewDificuldade
         
         let cGRecttableviewDificuldade:CGRect! = CGRectMake(view.frame.width*0.0234375, view.frame.height*0.682218, view.frame.width*0.95625, view.frame.height*0.1875)
@@ -66,7 +67,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         tableViewDificuldade.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellName)
         tableViewDificuldade.tag = 1
         tableViewDificuldade.tableHeaderView?.backgroundColor = lightBlue
-
+        tableViewDificuldade.alwaysBounceVertical = false
+        tableViewDificuldade.bounces = false
         // MARK: - addSubView
         
         view.addSubview(highlightedSongs)
@@ -153,7 +155,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         header.backgroundColor = lightBlue
         
-        let separator = UIView(frame: CGRectMake(0,view.frame.height*0.0625 - 8,tableView.bounds.width,1))
+        let separator = UIView(frame: CGRectMake(0,view.frame.height*0.0484155,tableView.bounds.width,1))
         separator.backgroundColor = tabAndNavigationBlue
         header.addSubview(separator)
         

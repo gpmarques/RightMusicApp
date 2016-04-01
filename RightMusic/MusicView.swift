@@ -34,6 +34,8 @@ class MusicView: UIView {
         let cGRectYouTube: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.387324, view.frame.width*1.0, view.frame.height*0.171875)
         
         youtubeMusic = UIWebView(frame: cGRectYouTube)
+        //<iframe width="420" height="315" src="https://www.youtube.com/embed/-VMFdpdDYYA" frameborder="0" allowfullscreen></iframe>
+        
         youtubeMusic.loadRequest(NSURLRequest(URL: NSURL(string: "https://www.youtube.com/embed/-VMFdpdDYYA")!))
         youtubeMusic.delegate = parent
         

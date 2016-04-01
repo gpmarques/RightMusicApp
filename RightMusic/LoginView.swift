@@ -55,7 +55,7 @@ class LoginView: UIView {
         
         forgotPasswordButton = UIButton(type: .System)
         forgotPasswordButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        forgotPasswordButton.setTitle("Forgot your passoword?", forState: .Normal)
+        forgotPasswordButton.setTitle("Forgot your password?", forState: .Normal)
         forgotPasswordButton.frame = CGRectMake(view.frame.width*0.0625, view.frame.height*0.708363, view.frame.width*0.446875, view.frame.width*0.13125)
         forgotPasswordButton.titleLabel?.font = UIFont(name: (forgotPasswordButton.titleLabel!.font?.fontName)!, size: view.frame.height*0.0194565)
         

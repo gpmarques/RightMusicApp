@@ -50,8 +50,9 @@ class LoginViewController: UIViewController {
             
             if usernameIndex != nil && userList[usernameIndex!].password == loginView.passwordTextField.text {
                 
-                presentViewController(HomeViewController(), animated: true, completion: nil)
-                
+                //presentViewController(HomeViewController(), animated: true, completion: nil)
+                self.presentViewController(DashboardTabBarController(),animated: true, completion: nil)
+
             }
             else {
                 
@@ -66,8 +67,8 @@ class LoginViewController: UIViewController {
     
     func signUp (sender: UIButton!) {
         
-        //self.presentViewController(SignUpViewController(), animated: true, completion: nil)
-        self.presentViewController(HomeViewController(), animated: true, completion: nil)
+        self.presentViewController(SignUpViewController(), animated: true, completion: nil)
+        //self.presentViewController(HomeViewController(), animated: true, completion: nil)
         //self.presentViewController(PlaylistViewController(), animated: true, completion: nil)
     
     }

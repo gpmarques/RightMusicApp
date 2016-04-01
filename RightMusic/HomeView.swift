@@ -21,6 +21,8 @@ class HomeView: UIView {
         super.init(frame: view.frame)
         
         view.backgroundColor = lightBlue
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+
         
         // MARK: - titleLabel
 
@@ -39,13 +41,12 @@ class HomeView: UIView {
         
         // MARK: - NavigationBar  
         
-        let cGRectHomeNavBar: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125/2)
+        let cGRectHomeNavBar: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0, view.frame.width*1.0, view.frame.height*0.125/2 + statusBarHeight)
         
         homeNavigationBar = UINavigationBar(frame:cGRectHomeNavBar)
         homeNavigationBar.items = [navItem]
         homeNavigationBar.translucent = false
         homeNavigationBar.barTintColor = tabAndNavigationBlue
-        
         navtitleLabel.center = CGPoint(x: homeNavigationBar.center.x, y: homeNavigationBar.center.y)
         
         // MARK: - Header Highlights
