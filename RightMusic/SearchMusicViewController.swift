@@ -8,22 +8,29 @@
 
 import UIKit
 
-class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     var tableViewMusic: UITableView = UITableView()
+    var searchBarObj: UISearchBar! = UISearchBar()
+    var is_searching: Bool!
     var musicView: SearchMusicView!
+    
+    
     
     var navItemTitle: String = ""
     
-    
-    var items: [String] = ["Music 1", "Music 2", "Music 3", "Music 4"]
+    var dataArray: NSMutableArray! //all data array for UITableView
+    var searchingDataArray: NSMutableArray! //data searching array that need for search result show
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        is_searching = false
+        dataArray = ["Apple", "Samsung", "iPhone", "iPad", "Macbook", "iMac" , "Mac Mini"]
+        searchingDataArray = []
+        self.tableViewMusic.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        
-        tableViewMusic.frame         =   CGRectMake(0, 102, view.frame.width, view.frame.height) // x, y, width, height
+        tableViewMusic.frame         =   CGRectMake(0, 66, view.frame.width, view.frame.height) // x, y, width, height
         tableViewMusic.delegate      =   self
         tableViewMusic.dataSource    =   self
         tableViewMusic.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -38,32 +45,56 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        if is_searching == true {
+            return searchingDataArray.count
+        }
+        else {
+            return dataArray.count
+        }
     }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        
-        cell.textLabel?.text = self.items[indexPath.row]
+
+        cell.textLabel?.text = self.dataArray[indexPath.row] as? String
         
         cell.backgroundColor = lightBlue
         
         cell.textLabel!.font = UIFont.systemFontOfSize(18)
         
-//        if (indexPath.row == 0) {
-//            let cellButton: UIButton!
-//            cellButton = UIButton(frame: CGRectMake(370, 7.5, 30, 30))
-//            cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
-//            cell.contentView.addSubview(cellButton)
-//            
-//        }
-        
+        if is_searching == true {
+            cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
+        }
+        else {
+            cell.textLabel!.text = dataArray[indexPath.row] as! NSString as String
+        }
         
         
         return cell
-        
     }
+        
+        func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
+            if searchBar.text!.isEmpty {
+                is_searching = false
+                tableViewMusic.reloadData()
+            }
+            else {
+                print(" search text %@ ",searchBar.text! as NSString)
+                is_searching = true
+                searchingDataArray.removeAllObjects()
+                for index in 0 ..< dataArray.count
+                {
+                    let currentString = dataArray.objectAtIndex(index) as! String
+                    if currentString.lowercaseString.rangeOfString(searchText.lowercaseString) != nil {
+                        searchingDataArray.addObject(currentString)
+                        
+                    }
+                }
+                tableViewMusic.reloadData()
+            }
+        }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
@@ -76,15 +107,5 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
         cellToDeSelect.contentView.backgroundColor = lightBlue
     }
     
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    
-    
+
 }

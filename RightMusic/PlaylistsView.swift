@@ -10,30 +10,42 @@ import UIKit
 
 class PlaylistsView: UIView {
     
-    
+    var navtitleLabel: UILabel!
     var playlistNavigationBar: UINavigationBar!
-    //var addButton: UIBarButtonItem!
     var navItem: UINavigationItem!
     
     init (view: UIView, parent: UIViewController) {
         super.init(frame: view.frame)
         
         view.backgroundColor = UIColor.whiteColor()
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        
+        
+        // MARK: - titleLabel
+        
+        let cGRectTitleLabel: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125/2)
+        
+        navtitleLabel = UILabel(frame: cGRectTitleLabel)
+        navtitleLabel.text = "Playlists"
+        navtitleLabel.textColor = UIColor.whiteColor()
+        navtitleLabel.textAlignment = .Center
+        
+        // MARK: - NavigationItem
         
         navItem = UINavigationItem()
-        //navItem.rightBarButtonItem = addButton
-        //addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PlaylistsView.addNewPlaylist))
-        playlistNavigationBar = UINavigationBar(frame: CGRectMake(0, 18, view.frame.width, 40))
-        navItem.title = "Playlists"
+        navItem.titleView = navtitleLabel
         
-        //playlistNavigationBar.topItem?.title = "Playlists"
-        //playlistNavigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
-        //navItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+        // MARK: - NavigationBar
         
+        let cGRectHomeNavBar: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0, view.frame.width*1.0, view.frame.height*0.125/2 + statusBarHeight)
+        
+        playlistNavigationBar = UINavigationBar(frame:cGRectHomeNavBar)
         playlistNavigationBar.items = [navItem]
         playlistNavigationBar.translucent = false
         playlistNavigationBar.barTintColor = tabAndNavigationBlue
+        navtitleLabel.center = CGPoint(x: playlistNavigationBar.center.x, y: playlistNavigationBar.center.y)
+
         
         
         view.addSubview(playlistNavigationBar)

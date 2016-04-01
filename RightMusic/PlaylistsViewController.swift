@@ -21,7 +21,9 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableViewPlaylist.frame         =   CGRectMake(0, 58, view.frame.width, view.frame.height) // x, y, width, height
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        
+        tableViewPlaylist.frame         =   CGRectMake(0, view.frame.height*0.125/2 + statusBarHeight, view.frame.width, view.frame.height) // x, y, width, height
         tableViewPlaylist.delegate      =   self
         tableViewPlaylist.dataSource    =   self
         tableViewPlaylist.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -80,6 +82,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
             textField.text = " "
         })
         
+        
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             print("Text field: \(textField.text)")
@@ -88,8 +91,6 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
             self.presentViewController(playVC, animated: true, completion: nil)
 
         }))
-        
-        //alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: goToNewPlaylist ))
         
         // show the alert
         self.presentViewController(alert, animated: true, completion: nil)
@@ -113,13 +114,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-//    func goToNewPlaylist(actionTarget: UIAlertAction) {
-//        
-//        
-//        
-//        self.presentViewController(NewPlaylistViewController(), animated: true, completion: nil)
-//        
-//    }
+
     
     
     

@@ -10,22 +10,36 @@ import UIKit
 
 class NewPlaylistsView: UIView {
     
-    
     var playlistNavigationBar: UINavigationBar!
     var navItem: UINavigationItem!
+    var navtitleLabel: UILabel!
+
     
     init (view: UIView, parent: NewPlaylistViewController) {
         super.init(frame: view.frame)
         
         view.backgroundColor = UIColor.whiteColor()
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         
+        let cGRectTitleLabel: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125/2)
+        
+        navtitleLabel = UILabel(frame: cGRectTitleLabel)
+        navtitleLabel.text = parent.navItemTitle
+        navtitleLabel.textColor = UIColor.whiteColor()
+        navtitleLabel.textAlignment = .Center
+
         navItem = UINavigationItem()
-        playlistNavigationBar = UINavigationBar(frame: CGRectMake(0, 18, view.frame.width, 40))
-        navItem.title = parent.navItemTitle
+
+        playlistNavigationBar = UINavigationBar(frame: CGRectMake(view.frame.width*0.0, view.frame.height*0.0, view.frame.width*1.0, view.frame.height*0.125/2 + statusBarHeight))
+        navItem.titleView = navtitleLabel
+            
+        //parent.navItemTitle
         
         playlistNavigationBar.items = [navItem]
         playlistNavigationBar.translucent = false
         playlistNavigationBar.barTintColor = tabAndNavigationBlue
+        navtitleLabel.center = CGPoint(x: playlistNavigationBar.center.x, y: playlistNavigationBar.center.y)
+
         
         
         view.addSubview(playlistNavigationBar)

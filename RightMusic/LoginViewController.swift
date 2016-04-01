@@ -78,7 +78,7 @@ class LoginViewController: UIViewController {
     func forgotPassword (sender: UIButton!) {
         
         //self.presentViewController(ForgotPasswordViewController(), animated: true, completion: nil)
-        self.presentViewController(SearchMusicViewController(), animated: true, completion: nil)
+        self.presentViewController(HomeViewController(), animated: true, completion: nil)
     }
     
 }

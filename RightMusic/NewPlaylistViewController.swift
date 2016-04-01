@@ -14,16 +14,16 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
     var playView: NewPlaylistsView!
     
     var navItemTitle: String = ""
-    
 
     var items: [String] = ["Add new musics"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+
         
-        
-        tableViewPlaylist.frame         =   CGRectMake(0, 58, view.frame.width, view.frame.height) // x, y, width, height
+        tableViewPlaylist.frame         =   CGRectMake(0, view.frame.height*0.125/2 + statusBarHeight, view.frame.width, view.frame.height) // x, y, width, height
         tableViewPlaylist.delegate      =   self
         tableViewPlaylist.dataSource    =   self
         tableViewPlaylist.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -57,11 +57,21 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
             cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
             cell.contentView.addSubview(cellButton)
             
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewPlaylistViewController.cellTapped))
+            
+            cell.addGestureRecognizer(tapRecognizer)
+            
         }
 
         
         
         return cell
+        
+    }
+    
+    func cellTapped() {
+        
+        self.presentViewController(SearchMusicViewController(), animated: true, completion: nil)
         
     }
     

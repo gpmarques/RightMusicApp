@@ -8,7 +8,6 @@
 
 import Foundation
 
-public var userList: [User] = [User(name: "Gabriel Bendia", username: "gbendia", email: "gabrielbendia@gmail.com", password: "123")]
+public var userList: [User] = [User(name: "Gabriel Bendia", username: "gbendia", email: "gabrielbendia@gmail.com", password: "123"), User(name: "Karina Tronkos", username: "kft", email: "karina.tronkos@gmail.com", password: "123")]
 
-public var userList1: [User] = [User(name: "Karina Tronkos", username: "kft", email: "karina.tronkos@gmail.com", password: "123")]
 
