@@ -16,7 +16,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
     var tableViewPlaylist: UITableView  =   UITableView()
     var playView: PlaylistsView!
     
-    var items: [String] = ["Nova Playlist", "1", "2", "3", "4", "5", "6", "7", "8"]
+    var items: [String] = ["New Playlist", "1", "2", "3", "4", "5", "6", "7", "8"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,17 +47,20 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
 
         cell.textLabel!.font = UIFont.systemFontOfSize(18)
         
-        if indexPath.row == 0 {
-            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.cellTapped))
-            cell.addGestureRecognizer(tapRecognizer)
-        
-        }
         
         if (indexPath.row == 0) {
             let cellButton: UIButton!
-            cellButton = UIButton(frame: CGRectMake(10, 10, 30, 30))
+            cellButton = UIButton(frame: CGRectMake(370, 7.5, 30, 30))
             cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
             cell.contentView.addSubview(cellButton)
+            
+        }
+        
+        if indexPath.row == 0 {
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.openAlert))
+            cell.addGestureRecognizer(tapRecognizer)
+            
+            
             
         }
         
@@ -65,15 +68,60 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         
     }
     
-    func cellTapped() {
+    func openAlert() {
+        // create the alert
+        let alert = UIAlertController(title: "Crete new playlist", message: "Name of the playlist:", preferredStyle: UIAlertControllerStyle.Alert)
+    
         
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.text = " "
+        })
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            let textField = alert.textFields![0] as UITextField
+            print("Text field: \(textField.text)")
+            let playVC = NewPlaylistViewController()
+            playVC.navItemTitle = textField.text!
+            self.presentViewController(playVC, animated: true, completion: nil)
+
+        }))
+        
+        //alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: goToNewPlaylist ))
+        
+        // show the alert
+        self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = lightBlueDarker
+
+    }
+    
+     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cellToDeSelect.contentView.backgroundColor = lightBlue
+    }
+
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//    func goToNewPlaylist(actionTarget: UIAlertAction) {
+//        
+//        
+//        
+//        self.presentViewController(NewPlaylistViewController(), animated: true, completion: nil)
+//        
+//    }
+    
+    
     
     
 }

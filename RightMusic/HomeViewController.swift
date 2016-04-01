@@ -177,5 +177,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return header
         
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = lightBlueDarker
+        
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cellToDeSelect.contentView.backgroundColor = lightBlue
+    }
 
 }

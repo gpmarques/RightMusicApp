@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 let lightBlue = UIColor(red: 227/255, green: 242/255, blue: 252/255, alpha: 1)
+let lightBlueDarker = UIColor(red: 210/255, green: 227/255, blue: 238/255, alpha: 1)
 let tabAndNavigationBlue = UIColor(red: 39/255, green: 73/255, blue: 117/255, alpha: 1)
 let confirmButtonBackgroundColor = UIColor(colorLiteralRed: 1/255, green: 32/255, blue: 71/255, alpha: 1)
 let textFieldBackgroundColor = UIColor(colorLiteralRed: 249/255, green: 249/255, blue: 249/255, alpha: 0.45)
