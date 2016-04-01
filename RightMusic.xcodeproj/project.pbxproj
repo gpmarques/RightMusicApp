@@ -11,7 +11,7 @@
 		653E4D921CAC44630031396F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */; };
 		653E4D941CAC77EA0031396F /* GlobalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D931CAC77EA0031396F /* GlobalVar.swift */; };
 		653E4E161CAEC07E0031396F /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4E151CAEC07E0031396F /* StreamReader.swift */; };
-		653E4E181CAEED380031396F /* Someday_Nickelback.txt in Resources */ = {isa = PBXBuildFile; fileRef = 653E4E171CAEED380031396F /* Someday_Nickelback.txt */; };
+		653E4E1A1CAF057E0031396F /* MusicList in Resources */ = {isa = PBXBuildFile; fileRef = 653E4E191CAF057E0031396F /* MusicList */; };
 		65615D541CA9833E0087D40E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65615D531CA9833E0087D40E /* SignUpView.swift */; };
 		65F965341CA306C900227843 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965331CA306C900227843 /* User.swift */; };
 		65F965361CA3093600227843 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965351CA3093600227843 /* Music.swift */; };
@@ -44,7 +44,7 @@
 		653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		653E4D931CAC77EA0031396F /* GlobalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
 		653E4E151CAEC07E0031396F /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
-		653E4E171CAEED380031396F /* Someday_Nickelback.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Someday_Nickelback.txt; sourceTree = "<group>"; };
+		653E4E191CAF057E0031396F /* MusicList */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MusicList; sourceTree = "<group>"; };
 		65615D531CA9833E0087D40E /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		65F965331CA306C900227843 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65F965351CA3093600227843 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				D156B0091CA08DC300131D47 /* Assets.xcassets */,
 				D156B00E1CA08DC300131D47 /* Info.plist */,
 				D11E4E8A1CA9D416009C7CEF /* Colors.swift */,
-				653E4E171CAEED380031396F /* Someday_Nickelback.txt */,
+				653E4E191CAF057E0031396F /* MusicList */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 			files = (
 				D156B00D1CA08DC300131D47 /* LaunchScreen.storyboard in Resources */,
 				D156B00A1CA08DC300131D47 /* Assets.xcassets in Resources */,
-				653E4E181CAEED380031396F /* Someday_Nickelback.txt in Resources */,
+				653E4E1A1CAF057E0031396F /* MusicList in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

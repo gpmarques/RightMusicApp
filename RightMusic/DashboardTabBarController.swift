@@ -21,13 +21,16 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         let icon2 = UITabBarItem(title: "Playlist", image: UIImage(named: "playlistTabBarIcon"), selectedImage: UIImage(named: "playlistTabBarIcon"))
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
+
         let controllers = [item1, item2]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
     }
     
+    
+    
     //Delegate methods
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         print("Should select viewController: \(viewController.title) ?")
-        return true;
+        return true
     }
 }

@@ -25,7 +25,10 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         musicView.textViewLyrics.delegate = self
         musicView.textViewChords.delegate = self
         
-        if let aStreamReader = StreamReader(path: "/Users/gabrielbendia/Documents/RightMusicApp/RightMusic/Someday_Nickelback.txt") {
+        let bundle = NSBundle.mainBundle()
+        let filePath = bundle.pathForResource("MusicList/Someday_Nickelback", ofType: ".txt")
+        
+        if let aStreamReader = StreamReader(path: filePath!) {
             defer {
                 
                 aStreamReader.close()
@@ -49,7 +52,6 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         
         musicView.textViewChords.text = musicView.textViewChords.text.stringByReplacingOccurrencesOfString("\\", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
         musicView.textViewLyrics.text = musicView.textViewLyrics.text.stringByReplacingOccurrencesOfString("\\", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        
     }
     
     func playTapped() {
