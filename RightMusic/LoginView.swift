@@ -19,7 +19,7 @@ class LoginView: UIView {
     var wrongUsernameOrPasswordAlert: UIAlertController!
     var okAction: UIAlertAction!
     
-    init(view: UIView, parent: UIViewController) {
+    init(view: UIView, parent: LoginViewController) {
         super.init(frame: view.frame)
         
         // MARK: Background
@@ -74,6 +74,7 @@ class LoginView: UIView {
         usernameTextField.clipsToBounds = true
         usernameTextField.layer.borderWidth = 1
         usernameTextField.layer.borderColor = textFieldBorderColor
+        usernameTextField.delegate = parent
         
         // Adicionando imagem dentro do Text Field do nome de usuário
         
@@ -101,6 +102,7 @@ class LoginView: UIView {
         passwordTextField.layer.borderWidth = 1
         passwordTextField.layer.borderColor = textFieldBorderColor
         passwordTextField.secureTextEntry = true
+        passwordTextField.delegate = parent
         
         // Adicionando imagem dentro do Text Field da senha
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Declarations -
     
@@ -88,6 +88,16 @@ class SignUpViewController: UIViewController {
         
         self.presentViewController(LoginViewController(), animated: true, completion: nil)
         
+    }
+    
+    // MARK: Keyboard dismiss
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

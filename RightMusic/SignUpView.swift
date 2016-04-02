@@ -26,7 +26,7 @@ class SignUpView: UIView {
     var passwordTextField: UITextField!
     var passwordConfirmationTextField: UITextField!
     
-    init (view: UIView, parent: UIViewController) {
+    init (view: UIView, parent: SignUpViewController) {
         
         super.init(frame: view.frame)
         
@@ -83,6 +83,7 @@ class SignUpView: UIView {
         nameTextField.clipsToBounds = true
         nameTextField.layer.borderWidth = 1
         nameTextField.layer.borderColor = textFieldBorderColor
+        nameTextField.delegate = parent
         
         // MARK: Username Text Field
         
@@ -98,6 +99,7 @@ class SignUpView: UIView {
         usernameTextField.clipsToBounds = true
         usernameTextField.layer.borderWidth = 1
         usernameTextField.layer.borderColor = textFieldBorderColor
+        usernameTextField.delegate = parent
         
         // MARK: E-mail Text Field
         
@@ -114,6 +116,7 @@ class SignUpView: UIView {
         emailTextField.clipsToBounds = true
         emailTextField.layer.borderWidth = 1
         emailTextField.layer.borderColor = textFieldBorderColor
+        emailTextField.delegate = parent
         
         // MARK: Password Text Field
         
@@ -131,6 +134,7 @@ class SignUpView: UIView {
         passwordTextField.layer.borderWidth = 1
         passwordTextField.layer.borderColor = textFieldBorderColor
         passwordTextField.secureTextEntry = true
+        passwordTextField.delegate = parent
         
         // MARK: Password Confirmation Text Field
         
@@ -148,6 +152,7 @@ class SignUpView: UIView {
         passwordConfirmationTextField.layer.borderWidth = 1
         passwordConfirmationTextField.layer.borderColor = textFieldBorderColor
         passwordConfirmationTextField.secureTextEntry = true
+        passwordConfirmationTextField.delegate = parent
         
         // MARK: - Add Subviews -
         

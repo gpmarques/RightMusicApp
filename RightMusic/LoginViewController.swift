@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var loginView: LoginView!
     
@@ -76,9 +76,17 @@ class LoginViewController: UIViewController {
     // MARK: Forgot Password Function
     
     func forgotPassword (sender: UIButton!) {
-        
-        //self.presentViewController(ForgotPasswordViewController(), animated: true, completion: nil)
-        self.presentViewController(HomeViewController(), animated: true, completion: nil)
+        self.presentViewController(ForgotPasswordViewController(), animated: true, completion: nil)
+    }
+    
+    // MARK: keyboard dismiss
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

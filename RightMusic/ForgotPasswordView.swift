@@ -16,7 +16,7 @@ class ForgotPasswordView: UIView {
     var sendButton: UIButton!
     var backToLoginButton: UIButton!
     
-    init(view: UIView, parent: UIViewController) {
+    init(view: UIView, parent: ForgotPasswordViewController) {
         super.init(frame: view.frame)
         
         // MARK: Background
@@ -56,6 +56,7 @@ class ForgotPasswordView: UIView {
         emailTextField.clipsToBounds = true
         emailTextField.layer.borderWidth = 1
         emailTextField.layer.borderColor = textFieldBorderColor
+        emailTextField.delegate = parent
         
         // MARK: Send Button
         
