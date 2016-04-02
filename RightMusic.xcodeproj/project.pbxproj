@@ -28,6 +28,10 @@
 		77A3DCC61CADC03E00954344 /* NewPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCC51CADC03E00954344 /* NewPlaylistView.swift */; };
 		77A3DCC81CAEBAF300954344 /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */; };
 		77A3DCCA1CAEBC9600954344 /* SearchMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCC91CAEBC9600954344 /* SearchMusicView.swift */; };
+		D1044B311CAFF5F100D71A51 /* MusicalTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B301CAFF5F100D71A51 /* MusicalTasteView.swift */; };
+		D1044B331CAFF62B00D71A51 /* MusicalTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B321CAFF62B00D71A51 /* MusicalTasteViewController.swift */; };
+		D1044B351CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B341CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift */; };
+		D1044B3C1CB041CA00D71A51 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1044B3A1CB041CA00D71A51 /* THLabel.m */; };
 		D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E841CA9809B009C7CEF /* LoginView.swift */; };
 		D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */; };
 		D11E4E891CA9A4B1009C7CEF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E881CA9A4B1009C7CEF /* HomeView.swift */; };
@@ -61,6 +65,12 @@
 		77A3DCC51CADC03E00954344 /* NewPlaylistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlaylistView.swift; sourceTree = "<group>"; };
 		77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		77A3DCC91CAEBC9600954344 /* SearchMusicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicView.swift; sourceTree = "<group>"; };
+		D1044B301CAFF5F100D71A51 /* MusicalTasteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalTasteView.swift; sourceTree = "<group>"; };
+		D1044B321CAFF62B00D71A51 /* MusicalTasteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalTasteViewController.swift; sourceTree = "<group>"; };
+		D1044B341CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalTasteCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1044B3A1CB041CA00D71A51 /* THLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THLabel.m; sourceTree = "<group>"; };
+		D1044B3B1CB041CA00D71A51 /* THLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THLabel.h; sourceTree = "<group>"; };
+		D1044B3F1CB0441700D71A51 /* RightMusic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RightMusic-Bridging-Header.h"; sourceTree = "<group>"; };
 		D11E4E841CA9809B009C7CEF /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D11E4E881CA9A4B1009C7CEF /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 				77A3DCC31CADBB4B00954344 /* NewPlaylistViewController.swift */,
 				77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */,
 				D11E4EE81CAC5355009C7CEF /* MusicViewController.swift */,
+				D1044B321CAFF62B00D71A51 /* MusicalTasteViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -140,6 +151,8 @@
 				77A3DCC51CADC03E00954344 /* NewPlaylistView.swift */,
 				77A3DCC91CAEBC9600954344 /* SearchMusicView.swift */,
 				D11E4EEA1CAC536A009C7CEF /* MusicView.swift */,
+				D1044B301CAFF5F100D71A51 /* MusicalTasteView.swift */,
+				D1044B341CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -162,6 +175,9 @@
 		D1812A7C1CA307CC00E1E04E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D1044B3A1CB041CA00D71A51 /* THLabel.m */,
+				D1044B3B1CB041CA00D71A51 /* THLabel.h */,
+				D1044B3F1CB0441700D71A51 /* RightMusic-Bridging-Header.h */,
 				D156B0021CA08DC300131D47 /* AppDelegate.swift */,
 				D156B0091CA08DC300131D47 /* Assets.xcassets */,
 				D156B00E1CA08DC300131D47 /* Info.plist */,
@@ -197,7 +213,7 @@
 		D156AFF71CA08DC300131D47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Guilherme Marques";
 				TargetAttributes = {
@@ -253,8 +269,10 @@
 				77A3DCC61CADC03E00954344 /* NewPlaylistView.swift in Sources */,
 				D11E4EEB1CAC536A009C7CEF /* MusicView.swift in Sources */,
 				65F965461CA616EB00227843 /* LoginViewController.swift in Sources */,
+				D1044B311CAFF5F100D71A51 /* MusicalTasteView.swift in Sources */,
 				65F9653C1CA30BC000227843 /* Chord.swift in Sources */,
 				65F965401CA32CE900227843 /* Playlist.swift in Sources */,
+				D1044B3C1CB041CA00D71A51 /* THLabel.m in Sources */,
 				770639651CAC5F80000E5C83 /* DashboardTabBarController.swift in Sources */,
 				65F9653A1CA30AFD00227843 /* ChordsWithLyrics.swift in Sources */,
 				77A3DCCA1CAEBC9600954344 /* SearchMusicView.swift in Sources */,
@@ -264,10 +282,12 @@
 				770639611CAAF67B000E5C83 /* PlaylistsViewController.swift in Sources */,
 				D11E4EE91CAC5355009C7CEF /* MusicViewController.swift in Sources */,
 				65F965341CA306C900227843 /* User.swift in Sources */,
+				D1044B351CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift in Sources */,
 				D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */,
 				653E4D921CAC44630031396F /* ForgotPasswordViewController.swift in Sources */,
 				65F9653E1CA32C2900227843 /* Artist.swift in Sources */,
 				770639631CAAF7CA000E5C83 /* PlaylistsView.swift in Sources */,
+				D1044B331CAFF62B00D71A51 /* MusicalTasteViewController.swift in Sources */,
 				D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,10 +391,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RightMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.RightMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RightMusic/RightMusic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -382,10 +405,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RightMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.RightMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RightMusic/RightMusic-Bridging-Header.h";
 			};
 			name = Release;
 		};

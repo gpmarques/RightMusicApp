@@ -13,7 +13,7 @@ import UIKit
 class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     
-    var tableViewPlaylist: UITableView  =   UITableView()
+    var tableViewPlaylist: UITableView = UITableView()
     var playView: PlaylistsView!
     
     var items: [String] = ["New Playlist", "1", "2", "3", "4", "5", "6", "7", "8"]
@@ -61,9 +61,6 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         if indexPath.row == 0 {
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.openAlert))
             cell.addGestureRecognizer(tapRecognizer)
-            
-            
-            
         }
         
         return cell

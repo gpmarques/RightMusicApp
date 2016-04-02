@@ -67,9 +67,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func signUp (sender: UIButton!) {
         
-        self.presentViewController(SignUpViewController(), animated: true, completion: nil)
+        //self.presentViewController(SignUpViewController(), animated: true, completion: nil)
         //self.presentViewController(HomeViewController(), animated: true, completion: nil)
         //self.presentViewController(PlaylistViewController(), animated: true, completion: nil)
+        self.presentViewController(MusicalTasteViewController(), animated: true, completion: nil)
     
     }
     
