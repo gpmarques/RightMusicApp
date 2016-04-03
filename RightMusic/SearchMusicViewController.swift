@@ -26,7 +26,7 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         is_searching = false
-        dataArray = ["Apple", "Samsung", "iPhone", "iPad", "Macbook", "iMac" , "Mac Mini"]
+        dataArray = ["TABLE VIEW COM AS MUSICAS DISPONIVEIS"]
         searchingDataArray = []
         self.tableViewMusic.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         

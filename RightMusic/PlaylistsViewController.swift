@@ -16,7 +16,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
     var tableViewPlaylist: UITableView = UITableView()
     var playView: PlaylistsView!
     
-    var items: [String] = ["New Playlist", "1", "2", "3", "4", "5", "6", "7", "8"]
+    var items: [String] = ["New Playlist"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,8 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         cell.backgroundColor = lightBlue
 
         cell.textLabel!.font = UIFont.systemFontOfSize(18)
+        
+        //cell.textLabel!.font = UIFont(name: "Gill Sans", size: 18)
         
         
         if (indexPath.row == 0) {

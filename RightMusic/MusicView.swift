@@ -11,7 +11,7 @@ import SafariServices
 
 class MusicView: UIView {
     
-    var albumImage: UIImageView!, playButton: UIImageView!
+    var albumImage: UIImageView!, playButton: UIImageView!, favoriteButton: UIImageView!
     var labelMusicName: UILabel!, labelArtistName: UILabel!
     var youtubeMusic: UIWebView!
     var toneButton: UIButton!, instrumentButton: UIButton!
@@ -29,6 +29,16 @@ class MusicView: UIView {
         playButton.image = UIImage(named: "play")
         
         playButton.userInteractionEnabled = true
+        
+        //MARK: favoriteButton
+        
+        /* let cGRectfavoriteButton: CGRect! = CGRectMake(view.frame.width*0.65942, view.frame.height*0.0991848, view.frame.width*0.0628019, view.frame.width*0.0628019)
+        
+        favoriteButton = UIImageView(frame: cGRectPlayButton)
+        favoriteButton.image = UIImage(named: "favorite")
+        
+        favoriteButton.userInteractionEnabled = true
+        */
         
         // MARK: WebView
         
@@ -107,6 +117,7 @@ class MusicView: UIView {
         
         //view.addSubview(youtubeMusic)
         view.addSubview(playButton)
+        //view.addSubview(favoriteButton)
         view.addSubview(albumImage)
         view.addSubview(labelMusicName)
         view.addSubview(labelArtistName)

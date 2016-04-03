@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     struct musicas {
         var sections: [String] =  ["Artistas / Bandas", "Dificuldade"]
-        var musics: [[String]] = [["Deep Purple", "Nickelback","Thirty Second to Mars"], ["Banda1","Banda2","Banda3"]]
+        var musics: [[String]] = [["Deep Purple", "Nickelback", "Metallica"], ["Legião Urbana","Thirty Second to Mars","Djavan"]]
     }
     
     let music = musicas()

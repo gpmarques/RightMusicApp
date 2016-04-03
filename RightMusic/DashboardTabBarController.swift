@@ -17,12 +17,15 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
     override func viewWillAppear(animated: Bool) {
         let item1 = HomeViewController()
         let item2 = PlaylistViewController()
+        let item3 = FavoritesViewController()
         let icon1 = UITabBarItem(title: "Home", image: UIImage(named: "homeTabBarIcon"), selectedImage: UIImage(named: "homeTabBarIcon"))
-        let icon2 = UITabBarItem(title: "Playlist", image: UIImage(named: "playlistTabBarIcon"), selectedImage: UIImage(named: "playlistTabBarIcon"))
+        let icon2 = UITabBarItem(title: "Playlists", image: UIImage(named: "playlistTabBarIcon"), selectedImage: UIImage(named: "playlistTabBarIcon"))
+        let icon3 = UITabBarItem(title: "Favorites", image: UIImage(named: "favoritesTabBarIcon"), selectedImage: UIImage(named: "favoritesTabBarIcon"))
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
+        item3.tabBarItem = icon3
 
-        let controllers = [item1, item2]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [item1, item2, item3]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
     }
     

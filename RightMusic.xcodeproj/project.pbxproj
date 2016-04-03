@@ -28,6 +28,8 @@
 		77A3DCC61CADC03E00954344 /* NewPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCC51CADC03E00954344 /* NewPlaylistView.swift */; };
 		77A3DCC81CAEBAF300954344 /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */; };
 		77A3DCCA1CAEBC9600954344 /* SearchMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCC91CAEBC9600954344 /* SearchMusicView.swift */; };
+		77A3DCCC1CB1CA3700954344 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCCB1CB1CA3700954344 /* FavoritesViewController.swift */; };
+		77A3DCCE1CB1CAE400954344 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3DCCD1CB1CAE400954344 /* FavoritesView.swift */; };
 		D1044B311CAFF5F100D71A51 /* MusicalTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B301CAFF5F100D71A51 /* MusicalTasteView.swift */; };
 		D1044B331CAFF62B00D71A51 /* MusicalTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B321CAFF62B00D71A51 /* MusicalTasteViewController.swift */; };
 		D1044B351CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B341CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift */; };
@@ -65,6 +67,8 @@
 		77A3DCC51CADC03E00954344 /* NewPlaylistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlaylistView.swift; sourceTree = "<group>"; };
 		77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		77A3DCC91CAEBC9600954344 /* SearchMusicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicView.swift; sourceTree = "<group>"; };
+		77A3DCCB1CB1CA3700954344 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		77A3DCCD1CB1CAE400954344 /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		D1044B301CAFF5F100D71A51 /* MusicalTasteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalTasteView.swift; sourceTree = "<group>"; };
 		D1044B321CAFF62B00D71A51 /* MusicalTasteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalTasteViewController.swift; sourceTree = "<group>"; };
 		D1044B341CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicalTasteCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				65F965431CA60FAE00227843 /* SignUpViewController.swift */,
 				D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */,
 				770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */,
+				77A3DCCB1CB1CA3700954344 /* FavoritesViewController.swift */,
 				77A3DCC31CADBB4B00954344 /* NewPlaylistViewController.swift */,
 				77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */,
 				D11E4EE81CAC5355009C7CEF /* MusicViewController.swift */,
@@ -148,6 +153,7 @@
 				65615D531CA9833E0087D40E /* SignUpView.swift */,
 				D11E4E881CA9A4B1009C7CEF /* HomeView.swift */,
 				770639621CAAF7CA000E5C83 /* PlaylistsView.swift */,
+				77A3DCCD1CB1CAE400954344 /* FavoritesView.swift */,
 				77A3DCC51CADC03E00954344 /* NewPlaylistView.swift */,
 				77A3DCC91CAEBC9600954344 /* SearchMusicView.swift */,
 				D11E4EEA1CAC536A009C7CEF /* MusicView.swift */,
@@ -268,6 +274,8 @@
 				D11E4E8B1CA9D416009C7CEF /* Colors.swift in Sources */,
 				77A3DCC61CADC03E00954344 /* NewPlaylistView.swift in Sources */,
 				D11E4EEB1CAC536A009C7CEF /* MusicView.swift in Sources */,
+				77A3DCCC1CB1CA3700954344 /* FavoritesViewController.swift in Sources */,
+				77A3DCCE1CB1CAE400954344 /* FavoritesView.swift in Sources */,
 				65F965461CA616EB00227843 /* LoginViewController.swift in Sources */,
 				D1044B311CAFF5F100D71A51 /* MusicalTasteView.swift in Sources */,
 				65F9653C1CA30BC000227843 /* Chord.swift in Sources */,
