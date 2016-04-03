@@ -12,6 +12,7 @@ class MusicalTasteView: UIView {
 
     var musicalGenresCollection: UICollectionView!
     var questionLabel: UILabel!
+    var confirmButton: UIButton!
     
     init (view: UIView, parent: MusicalTasteViewController) {
         super.init(frame: view.frame)
@@ -41,10 +42,21 @@ class MusicalTasteView: UIView {
         questionLabel.font = UIFont.systemFontOfSize(18.0)
         questionLabel.text = "What music genre do you like?"
         
+        // MARK: confirmButton
+        
+        
+        confirmButton = UIButton(type: .System)
+        confirmButton.setTitle("Confirm", forState: .Normal)
+        confirmButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        confirmButton.backgroundColor = confirmButtonBackgroundColor
+        confirmButton.frame = CGRectMake(view.frame.width*0.015625, view.frame.height*0.919014, view.frame.width*0.96875, view.frame.width*0.13125)
+        confirmButton.titleLabel?.font = UIFont(name: (confirmButton.titleLabel!.font?.fontName)!, size: view.frame.height*0.0244565)
+        confirmButton.layer.cornerRadius = 10
+        
         
         view.addSubview(questionLabel)
         view.addSubview(musicalGenresCollection)
-        
+        view.addSubview(confirmButton)
     
     }
     

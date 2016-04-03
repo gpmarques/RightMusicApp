@@ -56,12 +56,11 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
             cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
             cell.contentView.addSubview(cellButton)
             
-        }
-        
-        if indexPath.row == 0 {
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.openAlert))
             cell.addGestureRecognizer(tapRecognizer)
+            
         }
+        
         
         return cell
         

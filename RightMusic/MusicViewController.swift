@@ -24,7 +24,7 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         musicView.playButton.addGestureRecognizer(tapRecognizer)
         musicView.textViewLyrics.delegate = self
         musicView.textViewChords.delegate = self
-        
+
         let bundle = NSBundle.mainBundle()
         let filePath = bundle.pathForResource("MusicList/Someday_Nickelback", ofType: ".txt")
         
