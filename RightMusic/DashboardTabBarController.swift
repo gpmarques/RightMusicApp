@@ -21,6 +21,7 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         let item4 = ProfileViewController()
         
         let nav1 = UINavigationController(rootViewController: item1)
+        let nav2 = UINavigationController(rootViewController: item2)
         
         let icon1 = UITabBarItem(title: "Home", image: UIImage(named: "homeTabBarIcon"), selectedImage: UIImage(named: "homeTabBarIcon"))
         let icon2 = UITabBarItem(title: "Playlists", image: UIImage(named: "playlistTabBarIcon"), selectedImage: UIImage(named: "playlistTabBarIcon"))
@@ -31,10 +32,9 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         item3.tabBarItem = icon3
         item4.tabBarItem = icon4
 
-        let controllers = [nav1, item2, item3, item4]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [nav1, nav2, item3, item4]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
         
-        self.tabBarController?.tabBar.barTintColor = tabAndNavigationBlue
     }
     
     

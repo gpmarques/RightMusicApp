@@ -37,7 +37,7 @@ class LoginView: UIView {
         // MARK: Logo
         
         logo = UIImageView()
-        logo.frame = CGRectMake(view.frame.width/2 - view.frame.width*0.234375/2, view.frame.height*0.096831, view.frame.width*0.234375, view.frame.width*0.234375)
+        logo.frame = CGRectMake(view.frame.width/2 - view.frame.width*0.234375/2, view.frame.height*0.096831, view.frame.width*0.234375, view.frame.width*0.265625)
         logo.image = UIImage(named: "logoImage")
         
         // MARK: Login Button

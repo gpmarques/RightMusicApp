@@ -32,6 +32,9 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
     
         //self.view.addSubview(playView)
         self.view.addSubview(tableViewPlaylist)
+        
+        self.navigationController?.navigationBar.hidden = true
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,9 +50,6 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         cell.backgroundColor = lightBlue
 
         cell.textLabel!.font = UIFont.systemFontOfSize(18)
-        
-        //cell.textLabel!.font = UIFont(name: "Gill Sans", size: 18)
-        
         
         if (indexPath.row == 0) {
             let cellButton: UIButton!
@@ -87,7 +87,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
             if textField.text != ""  && textField.text != " " {
                 let newPlaylist = self.addNewPlaylist(textField.text!)
                 let playVC = NewPlaylistViewController(playlist: newPlaylist)
-                self.presentViewController(playVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(playVC, animated: true)
             } else {
                 
                 let alertPlaylistName = UIAlertController(title: "The new playlist can't be nameless", message: "", preferredStyle: UIAlertControllerStyle.Alert)
