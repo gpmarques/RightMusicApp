@@ -21,9 +21,7 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         musicView = SearchMusicView(view: view, parent: self)
-        
-        //self.view.addSubview(musicView)
-        
+                
     }
     
     override func viewDidAppear(animated: Bool) {

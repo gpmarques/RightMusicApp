@@ -105,6 +105,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         let newPlaylist = Playlist(title: name, userIdentifier: loggedUser)
         playLists.append(newPlaylist)
         items.append(newPlaylist.title)
+        tableViewPlaylist.reloadData()
         
         return newPlaylist
         
