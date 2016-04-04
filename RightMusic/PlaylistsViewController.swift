@@ -56,17 +56,9 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
             cellButton = UIButton(frame: CGRectMake(280, 7.5, 30, 30))
             cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
             cell.contentView.addSubview(cellButton)
-            
-            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.openAlert))
-            cell.addGestureRecognizer(tapRecognizer)
-            
-        } else {
-            
-            let goToPlaylistRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.openPlaylist(_:)))
-            cell.addGestureRecognizer(goToPlaylistRecognizer)
         }
         
-        
+        cell.tag = indexPath.row
         return cell
         
     }
@@ -105,45 +97,32 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         let newPlaylist = Playlist(title: name, userIdentifier: loggedUser)
         playLists.append(newPlaylist)
         items.append(newPlaylist.title)
-        tableViewPlaylist.reloadData()
-        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableViewPlaylist.reloadData()
+        })
         return newPlaylist
         
     }
     
-    func openPlaylist(sender: UITableViewCell) {
-        
-        if let index = playLists.indexOf({$0.title == sender.textLabel?.text}) {
-            let openPlayVC = NewPlaylistViewController(playlist: playLists[index])
-            self.presentViewController(openPlayVC, animated: true, completion: nil)
-        } else {
-            
-            print("Error, playlist não encontrada")
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            openAlert()
+        }
+        else {
+            let openPlayVC = NewPlaylistViewController(playlist: playLists[indexPath.row])
+            self.navigationController!.pushViewController(openPlayVC, animated: true)
         }
         
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        selectedCell.contentView.backgroundColor = lightBlueDarker
-
     }
     
      func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         cellToDeSelect.contentView.backgroundColor = lightBlue
     }
-
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    
-    
-    
     
 }
