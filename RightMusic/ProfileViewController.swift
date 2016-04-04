@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
 
         profileView = ProfileView(view: view, parent: self)
         
+        profileView.logoutButton.addTarget(self, action: #selector(logoutFunction), forControlEvents: .TouchUpInside)
         self.navigationController?.navigationBar.hidden = true
         
     }
@@ -26,6 +27,12 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Functions -
     
+    func logoutFunction (sender: UIButton) {
+        
+        presentViewController(LoginViewController(), animated: true, completion: nil)
+        
+    }
 
 }
