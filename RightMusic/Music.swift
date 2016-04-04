@@ -13,10 +13,10 @@ class Music {
 
     var title: String
     var genre: String
-    var artist: [Artist]
+    var artist: Artist
     var chords: ChordsWithLyrics
     
-    init (title: String, genre: String, artist: [Artist], chords: ChordsWithLyrics) {
+    init (title: String, genre: String, artist: Artist, chords: ChordsWithLyrics) {
         
         self.title = title
         self.genre = genre

@@ -12,12 +12,14 @@ import Foundation
 class Playlist {
     
     var title: String
+    var userIdentifier: Int
     var music: [Music]?
     
-    init (title: String) {
+    init (title: String, userIdentifier: Int) {
         
         self.title = title
-        
+        self.userIdentifier = userIdentifier
+
     }
     
 }

@@ -10,91 +10,85 @@ import UIKit
 
 class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var tableViewMusic: UITableView = UITableView()
-    var searchBarObj: UISearchBar! = UISearchBar()
-    var is_searching: Bool!
     var musicView: SearchMusicView!
     
-    
-    
-    var navItemTitle: String = ""
-    
-    var dataArray: NSMutableArray! //all data array for UITableView
-    var searchingDataArray: NSMutableArray! //data searching array that need for search result show
+    var searchActive = false
+    let data = ["Someday", "How you remind me", "Burn it to the ground", "Far Away"]
+    var filtered: [String] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        is_searching = false
-        dataArray = ["Apple", "Samsung", "iPhone", "iPad", "Macbook", "iMac" , "Mac Mini"]
-        searchingDataArray = []
-        self.tableViewMusic.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        tableViewMusic.frame         =   CGRectMake(0, 66, view.frame.width, view.frame.height) // x, y, width, height
-        tableViewMusic.delegate      =   self
-        tableViewMusic.dataSource    =   self
-        tableViewMusic.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableViewMusic.backgroundColor = lightBlue
-        
         musicView = SearchMusicView(view: view, parent: self)
         
-        
-        self.view.addSubview(musicView)
-        self.view.addSubview(tableViewMusic)
+        //self.view.addSubview(musicView)
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        musicView.searchBar.becomeFirstResponder()
+    }
+    
+    // MARK: SearchBar Delegate
+    
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = true
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filtered = data.filter({ (text) -> Bool in
+            let tmp: NSString = text
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        if(filtered.count == 0){
+            searchActive = false
+        } else {
+            searchActive = true
+        }
+        self.musicView.tableViewMusic.reloadData()
+        
+        
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: TableView Delegate and DataSource
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if is_searching == true {
-            return searchingDataArray.count
+        if searchActive {
+            return filtered.count
         }
-        else {
-            return dataArray.count
-        }
+        return data.count;
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-
-        cell.textLabel?.text = self.dataArray[indexPath.row] as? String
-        
-        cell.backgroundColor = lightBlue
-        
-        cell.textLabel!.font = UIFont.systemFontOfSize(18)
-        
-        if is_searching == true {
-            cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        if  searchActive {
+            cell.textLabel?.text = filtered[indexPath.row]
+        } else {
+            cell.textLabel?.text = data[indexPath.row]
         }
-        else {
-            cell.textLabel!.text = dataArray[indexPath.row] as! NSString as String
-        }
-        
         
         return cell
     }
-        
-        func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
-            if searchBar.text!.isEmpty {
-                is_searching = false
-                tableViewMusic.reloadData()
-            }
-            else {
-                print(" search text %@ ",searchBar.text! as NSString)
-                is_searching = true
-                searchingDataArray.removeAllObjects()
-                for index in 0 ..< dataArray.count
-                {
-                    let currentString = dataArray.objectAtIndex(index) as! String
-                    if currentString.lowercaseString.rangeOfString(searchText.lowercaseString) != nil {
-                        searchingDataArray.addObject(currentString)
-                        
-                    }
-                }
-                tableViewMusic.reloadData()
-            }
-        }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
@@ -106,6 +100,5 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
         let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         cellToDeSelect.contentView.backgroundColor = lightBlue
     }
-    
 
 }

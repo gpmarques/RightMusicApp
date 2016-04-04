@@ -24,7 +24,7 @@ class NewPlaylistsView: UIView {
         let cGRectTitleLabel: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125/2)
         
         navtitleLabel = UILabel(frame: cGRectTitleLabel)
-        navtitleLabel.text = parent.navItemTitle
+        navtitleLabel.text = parent.playlist.title
         navtitleLabel.textColor = UIColor.whiteColor()
         navtitleLabel.textAlignment = .Center
 
@@ -63,9 +63,6 @@ class NewPlaylistsView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
     
 }
 

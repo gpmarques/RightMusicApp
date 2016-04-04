@@ -16,7 +16,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
     var tableViewPlaylist: UITableView = UITableView()
     var playView: PlaylistsView!
     
-    var items: [String] = ["New Playlist", "1", "2", "3", "4", "5", "6", "7", "8"]
+    var items: [String] = [playLists[0].title]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         playView = PlaylistsView(view: view, parent: self)
     
-        self.view.addSubview(playView)
+        //self.view.addSubview(playView)
         self.view.addSubview(tableViewPlaylist)
     }
     
@@ -52,13 +52,17 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         if (indexPath.row == 0) {
             let cellButton: UIButton!
-            cellButton = UIButton(frame: CGRectMake(370, 7.5, 30, 30))
+            cellButton = UIButton(frame: CGRectMake(280, 7.5, 30, 30))
             cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
             cell.contentView.addSubview(cellButton)
             
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.openAlert))
             cell.addGestureRecognizer(tapRecognizer)
             
+        } else {
+            
+            let goToPlaylistRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.openPlaylist(_:)))
+            cell.addGestureRecognizer(goToPlaylistRecognizer)
         }
         
         
@@ -67,11 +71,9 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     func openAlert() {
-        // create the alert
-        let alert = UIAlertController(title: "Crete new playlist", message: "Name of the playlist:", preferredStyle: UIAlertControllerStyle.Alert)
+
+        let alert = UIAlertController(title: "Create new playlist", message: "Name of the playlist:", preferredStyle: UIAlertControllerStyle.Alert)
     
-        
-        // add an action (button)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
@@ -81,15 +83,42 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            print("Text field: \(textField.text)")
-            let playVC = NewPlaylistViewController()
-            playVC.navItemTitle = textField.text!
-            self.presentViewController(playVC, animated: true, completion: nil)
-
+            if textField.text != ""  && textField.text != " " {
+                let newPlaylist = self.addNewPlaylist(textField.text!)
+                let playVC = NewPlaylistViewController(playlist: newPlaylist)
+                self.presentViewController(playVC, animated: true, completion: nil)
+            } else {
+                
+                let alertPlaylistName = UIAlertController(title: "The new playlist can't be nameless", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                alertPlaylistName.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alertPlaylistName, animated: true, completion: nil)
+                
+            }
         }))
         
-        // show the alert
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func addNewPlaylist(name: String) -> Playlist {
+        
+        let newPlaylist = Playlist(title: name, userIdentifier: loggedUser)
+        playLists.append(newPlaylist)
+        items.append(newPlaylist.title)
+        
+        return newPlaylist
+        
+    }
+    
+    func openPlaylist(sender: UITableViewCell) {
+        
+        if let index = playLists.indexOf({$0.title == sender.textLabel?.text}) {
+            let openPlayVC = NewPlaylistViewController(playlist: playLists[index])
+            self.presentViewController(openPlayVC, animated: true, completion: nil)
+        } else {
+            
+            print("Error, playlist não encontrada")
+        }
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -12,10 +12,17 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
     
     var tableViewPlaylist: UITableView = UITableView()
     var playView: NewPlaylistsView!
-    
-    var navItemTitle: String = ""
-
+    var playlist: Playlist!
     var items: [String] = ["Add new musics"]
+    
+    init(playlist: Playlist) {
+        super.init(nibName: nil, bundle: nil)
+        self.playlist = playlist
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +39,8 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
         playView = NewPlaylistsView(view: view, parent: self)
         
         
-        self.view.addSubview(playView)
+        
+        //self.view.addSubview(playView)
         self.view.addSubview(tableViewPlaylist)
         
     }
@@ -53,7 +61,7 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
         
         if (indexPath.row == 0) {
             let cellButton: UIButton!
-            cellButton = UIButton(frame: CGRectMake(370, 7.5, 30, 30))
+            cellButton = UIButton(frame: CGRectMake(280, 7.5, 30, 30))
             cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
             cell.contentView.addSubview(cellButton)
             
@@ -63,8 +71,6 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
 
-        
-        
         return cell
         
     }

@@ -69,7 +69,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     }
                     else {
                         
-                        let newUser = User(name: signUpView.nameTextField.text!, username: signUpView.usernameTextField.text!, email: signUpView.emailTextField.text!, password: signUpView.passwordTextField.text!)
+                        let newUser = User(name: signUpView.nameTextField.text!, username: signUpView.usernameTextField.text!, email: signUpView.emailTextField.text!, password: signUpView.passwordTextField.text!, userIdentifier: userList.endIndex)
                         userList.append(newUser)
                         
                         let signUpSuccedded = UIAlertController(title: "Cadastro completo", message: "Você se cadastrou com sucesso. Pressione 'Confirmar' para continuar e fazer o seu login", preferredStyle: .Alert)

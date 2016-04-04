@@ -16,14 +16,16 @@ public class User {
     var email: String
     var password: String
     var profilePicture: String?
-    var playlist: [Playlist] = [Playlist(title: "Favorites")]
+    var userIdentifier: Int
+    var playlist: [Playlist] = [Playlist(title: "Favorites", userIdentifier: 999999)]
     
-    public init (name: String, username: String, email: String, password: String) {
+    public init (name: String, username: String, email: String, password: String, userIdentifier: Int) {
         
         self.name = name
         self.username = username
         self.email = email
         self.password = password
+        self.userIdentifier = userIdentifier
         
     }
     
@@ -31,7 +33,7 @@ public class User {
         
         if playlist.indexOf({$0.title == playlistTitle}) == nil {
             
-            let newPlaylist = Playlist(title: playlistTitle)
+            let newPlaylist = Playlist(title: playlistTitle, userIdentifier: self.userIdentifier)
             playlist.append(newPlaylist)
             return true
             
