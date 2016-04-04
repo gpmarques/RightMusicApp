@@ -22,6 +22,10 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         musicView = MusicView(view: view, parent: self)
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(MusicViewController.playTapped))
         musicView.playButton.addGestureRecognizer(tapRecognizer)
+        
+        let tapRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(MusicViewController.favoriteTapped))
+        musicView.favoriteButton.addGestureRecognizer(tapRecognizer1)
+        
         musicView.textViewLyrics.delegate = self
         musicView.textViewChords.delegate = self
 
@@ -59,6 +63,10 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         let safariVC = SFSafariViewController(URL: NSURL(string: "https://www.youtube.com/embed/-VMFdpdDYYA")!)
         self.presentViewController(safariVC, animated: true, completion: nil)
         
+    }
+    
+    func favoriteTapped() {
+        //IMPLEMENTAR QUE, QUANDO O favoriteButton É CLICADO, A MUSICA VAI PRA TABLEVIEW DA VIEW "FAVORITOS"
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {

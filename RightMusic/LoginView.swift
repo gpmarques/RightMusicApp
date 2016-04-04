@@ -18,6 +18,7 @@ class LoginView: UIView {
     var missingFieldAlert: UIAlertController!
     var wrongUsernameOrPasswordAlert: UIAlertController!
     var okAction: UIAlertAction!
+    var logo: UIImageView!
     
     init(view: UIView, parent: LoginViewController) {
         super.init(frame: view.frame)
@@ -32,6 +33,12 @@ class LoginView: UIView {
         missingFieldAlert = UIAlertController(title: "Blank field", message: "Please fill all text fields to login", preferredStyle: .Alert)
         wrongUsernameOrPasswordAlert = UIAlertController(title: "Wrong Username or Password", message: "Please verify your username and password nd try again", preferredStyle: .Alert)
         okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        
+        // MARK: Logo
+        
+        logo = UIImageView()
+        logo.frame = CGRectMake(view.frame.width/2 - view.frame.width*0.234375/2, view.frame.height*0.096831, view.frame.width*0.234375, view.frame.width*0.234375)
+        logo.image = UIImage(named: "logoImage")
         
         // MARK: Login Button
         
@@ -118,6 +125,7 @@ class LoginView: UIView {
         // MARK: - Add Subviews -
         
         view.addSubview(backgroundImage)
+        view.addSubview(logo)
         view.addSubview(loginButton)
         view.addSubview(signUpButton)
         view.addSubview(forgotPasswordButton)

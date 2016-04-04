@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     struct musicas {
         var sections: [String] =  ["Artistas / Bandas", "Dificuldade"]
-        var musics: [[String]] = [["Deep Purple", "Nickelback","Thirty Second to Mars"], ["Banda1","Banda2","Banda3"]]
+        var musics: [[String]] = [["Deep Purple", "Nickelback", "Metallica"], ["Legião Urbana","Thirty Second to Mars","Djavan"]]
     }
     
     let music = musicas()
@@ -57,6 +57,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         tableViewArtistaBanda.tableHeaderView?.backgroundColor = lightBlue
         tableViewArtistaBanda.alwaysBounceVertical = false
         tableViewArtistaBanda.bounces = false
+        
         // MARK: - tableViewDificuldade
         
         let cGRecttableviewDificuldade:CGRect! = CGRectMake(view.frame.width*0.0234375, view.frame.height*0.682218, view.frame.width*0.95625, view.frame.height*0.1875)
@@ -69,6 +70,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         tableViewDificuldade.tableHeaderView?.backgroundColor = lightBlue
         tableViewDificuldade.alwaysBounceVertical = false
         tableViewDificuldade.bounces = false
+        
         // MARK: - addSubView
         
         view.addSubview(highlightedSongs)
@@ -76,7 +78,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         view.addSubview(tableViewDificuldade)
         homeView = HomeView(view: view, parent: self)
 
-        
+        self.navigationController?.navigationBar.hidden = true
 
     }
 
@@ -104,8 +106,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func cellTapped() {
-        
-        self.presentViewController(MusicViewController(), animated: true, completion: nil)
+        self.navigationController?.pushViewController(MusicViewController(), animated: true)
+        //self.presentViewController(MusicViewController(), animated: true, completion: nil)
         
     }
     

@@ -21,9 +21,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginView.missingFieldAlert.addAction(loginView.okAction)
         loginView.wrongUsernameOrPasswordAlert.addAction(loginView.okAction)
         loginView.loginButton.addTarget(self, action: #selector(verifyLogin),
-                              forControlEvents: .TouchUpInside)
+                                        forControlEvents: .TouchUpInside)
         loginView.signUpButton.addTarget(self, action: #selector(signUp),
-                               forControlEvents: .TouchUpInside)
+                                         forControlEvents: .TouchUpInside)
         loginView.forgotPasswordButton.addTarget(self, action: #selector(forgotPassword), forControlEvents: .TouchUpInside)
         
     }
@@ -50,9 +50,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             if usernameIndex != nil && userList[usernameIndex!].password == loginView.passwordTextField.text {
                 
-                //presentViewController(HomeViewController(), animated: true, completion: nil)
-                self.presentViewController(DashboardTabBarController(),animated: true, completion: nil)
-
+                if userList[usernameIndex!].isFirstLogin == true {
+                    
+                    self.presentViewController(MusicalTasteViewController(), animated: true, completion: nil)
+//                    currentUserIndex = usernameIndex
+                    userList[usernameIndex!].isFirstLogin = false
+                    
+                }
+                else {
+                    
+                    presentViewController(HomeViewController(), animated: true, completion: nil)
+//                    self.presentViewController(DashboardTabBarController(),animated: true, completion: nil)
+//                    currentUserIndex = usernameIndex
+                    
+                }
+                
             }
             else {
                 
@@ -71,13 +83,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //self.presentViewController(HomeViewController(), animated: true, completion: nil)
         //self.presentViewController(PlaylistViewController(), animated: true, completion: nil)
         self.presentViewController(MusicalTasteViewController(), animated: true, completion: nil)
-    
+        
     }
     
     // MARK: Forgot Password Function
     
     func forgotPassword (sender: UIButton!) {
-        self.presentViewController(ForgotPasswordViewController(), animated: true, completion: nil)
+        self.presentViewController(FavoritesViewController(), animated: true, completion: nil)
     }
     
     // MARK: keyboard dismiss
