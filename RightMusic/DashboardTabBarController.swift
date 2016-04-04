@@ -18,15 +18,23 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         let item1 = HomeViewController()
         let item2 = PlaylistViewController()
         let item3 = FavoritesViewController()
+        let item4 = ProfileViewController()
+        
+        let nav1 = UINavigationController(rootViewController: item1)
+        
         let icon1 = UITabBarItem(title: "Home", image: UIImage(named: "homeTabBarIcon"), selectedImage: UIImage(named: "homeTabBarIcon"))
         let icon2 = UITabBarItem(title: "Playlists", image: UIImage(named: "playlistTabBarIcon"), selectedImage: UIImage(named: "playlistTabBarIcon"))
         let icon3 = UITabBarItem(title: "Favorites", image: UIImage(named: "favoritesTabBarIcon"), selectedImage: UIImage(named: "favoritesTabBarIcon"))
+        let icon4 = UITabBarItem(title: "Profile", image: UIImage(named: "profileTabBarIcon"), selectedImage: UIImage(named: "profileTabBarIcon"))
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
         item3.tabBarItem = icon3
+        item4.tabBarItem = icon4
 
-        let controllers = [item1, item2, item3]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [nav1, item2, item3, item4]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
+        
+        self.tabBarController?.tabBar.barTintColor = tabAndNavigationBlue
     }
     
     

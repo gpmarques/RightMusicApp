@@ -17,6 +17,7 @@ public class User {
     var password: String
     var profilePicture: String?
     var playlist: [Playlist] = [Playlist(title: "Favorites")]
+    var isFirstLogin = true
     
     public init (name: String, username: String, email: String, password: String) {
         

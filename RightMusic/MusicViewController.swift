@@ -23,8 +23,8 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(MusicViewController.playTapped))
         musicView.playButton.addGestureRecognizer(tapRecognizer)
         
-        //let tapRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(MusicViewController.favoriteTapped))
-        //musicView.favoriteButton.addGestureRecognizer(tapRecognizer1)
+        let tapRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(MusicViewController.favoriteTapped))
+        musicView.favoriteButton.addGestureRecognizer(tapRecognizer1)
         
         musicView.textViewLyrics.delegate = self
         musicView.textViewChords.delegate = self

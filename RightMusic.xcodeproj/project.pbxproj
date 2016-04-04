@@ -12,6 +12,8 @@
 		653E4D941CAC77EA0031396F /* GlobalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4D931CAC77EA0031396F /* GlobalVar.swift */; };
 		653E4E161CAEC07E0031396F /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4E151CAEC07E0031396F /* StreamReader.swift */; };
 		653E4E1A1CAF057E0031396F /* MusicList in Resources */ = {isa = PBXBuildFile; fileRef = 653E4E191CAF057E0031396F /* MusicList */; };
+		653E4E1C1CB2A6A30031396F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4E1B1CB2A6A30031396F /* ProfileView.swift */; };
+		653E4E1E1CB2A6C60031396F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E4E1D1CB2A6C60031396F /* ProfileViewController.swift */; };
 		65615D541CA9833E0087D40E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65615D531CA9833E0087D40E /* SignUpView.swift */; };
 		65F965341CA306C900227843 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965331CA306C900227843 /* User.swift */; };
 		65F965361CA3093600227843 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F965351CA3093600227843 /* Music.swift */; };
@@ -51,6 +53,8 @@
 		653E4D931CAC77EA0031396F /* GlobalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
 		653E4E151CAEC07E0031396F /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		653E4E191CAF057E0031396F /* MusicList */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MusicList; sourceTree = "<group>"; };
+		653E4E1B1CB2A6A30031396F /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		653E4E1D1CB2A6C60031396F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		65615D531CA9833E0087D40E /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		65F965331CA306C900227843 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65F965351CA3093600227843 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */,
 				D11E4EE81CAC5355009C7CEF /* MusicViewController.swift */,
 				D1044B321CAFF62B00D71A51 /* MusicalTasteViewController.swift */,
+				653E4E1D1CB2A6C60031396F /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				D11E4EEA1CAC536A009C7CEF /* MusicView.swift */,
 				D1044B301CAFF5F100D71A51 /* MusicalTasteView.swift */,
 				D1044B341CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift */,
+				653E4E1B1CB2A6A30031396F /* ProfileView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -290,11 +296,13 @@
 				770639611CAAF67B000E5C83 /* PlaylistsViewController.swift in Sources */,
 				D11E4EE91CAC5355009C7CEF /* MusicViewController.swift in Sources */,
 				65F965341CA306C900227843 /* User.swift in Sources */,
+				653E4E1C1CB2A6A30031396F /* ProfileView.swift in Sources */,
 				D1044B351CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift in Sources */,
 				D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */,
 				653E4D921CAC44630031396F /* ForgotPasswordViewController.swift in Sources */,
 				65F9653E1CA32C2900227843 /* Artist.swift in Sources */,
 				770639631CAAF7CA000E5C83 /* PlaylistsView.swift in Sources */,
+				653E4E1E1CB2A6C60031396F /* ProfileViewController.swift in Sources */,
 				D1044B331CAFF62B00D71A51 /* MusicalTasteViewController.swift in Sources */,
 				D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */,
 			);

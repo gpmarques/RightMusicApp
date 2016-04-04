@@ -32,14 +32,13 @@ class MusicView: UIView {
         
         //MARK: favoriteButton
         
-        /* let cGRectfavoriteButton: CGRect! = CGRectMake(view.frame.width*0.65942, view.frame.height*0.0991848, view.frame.width*0.0628019, view.frame.width*0.0628019)
+        let cGRectFavoriteButton: CGRect! = CGRectMake(view.frame.width*0.65942, view.frame.height*0.0991848, view.frame.width*0.0628019, view.frame.width*0.0628019)
         
-        favoriteButton = UIImageView(frame: cGRectPlayButton)
+        favoriteButton = UIImageView(frame: cGRectFavoriteButton)
         favoriteButton.image = UIImage(named: "favorite")
         
         favoriteButton.userInteractionEnabled = true
-        */
-        
+ 
         // MARK: WebView
         
         let cGRectYouTube: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.387324, view.frame.width*1.0, view.frame.height*0.171875)
@@ -79,7 +78,7 @@ class MusicView: UIView {
         
         toneButton = UIButton(frame: cGRectToneButton)
         toneButton.setTitleColor(tabAndNavigationBlue, forState: .Normal)
-        toneButton.setTitle("Tom:", forState: .Normal)
+        toneButton.setTitle("Tom: D", forState: .Normal)
         toneButton.backgroundColor = lightBlue
         toneButton.layer.borderColor = tabAndNavigationBlue.CGColor
         toneButton.layer.borderWidth = 1.0
@@ -117,7 +116,7 @@ class MusicView: UIView {
         
         //view.addSubview(youtubeMusic)
         view.addSubview(playButton)
-        //view.addSubview(favoriteButton)
+        view.addSubview(favoriteButton)
         view.addSubview(albumImage)
         view.addSubview(labelMusicName)
         view.addSubview(labelArtistName)
