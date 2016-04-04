@@ -53,22 +53,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if userList[usernameIndex!].isFirstLogin == true {
                     
                     self.presentViewController(MusicalTasteViewController(), animated: true, completion: nil)
-//                    currentUserIndex = usernameIndex
                     userList[usernameIndex!].isFirstLogin = false
+                    loggedUser = usernameIndex
                     
                 }
                 else {
                     
-                    presentViewController(HomeViewController(), animated: true, completion: nil)
-//                    self.presentViewController(DashboardTabBarController(),animated: true, completion: nil)
-//                    currentUserIndex = usernameIndex
-                    
+//                    presentViewController(HomeViewController(), animated: true, completion: nil)
+                    self.presentViewController(DashboardTabBarController(),animated: true, completion: nil)
+                    loggedUser = usernameIndex
                 }
                 
             }
             else {
                 
-                presentViewController(loginView.wrongUsernameOrPasswordAlert, animated: true, completion: nil)
+                self.presentViewController(loginView.wrongUsernameOrPasswordAlert, animated: true, completion: nil)
                 
             }
         }
