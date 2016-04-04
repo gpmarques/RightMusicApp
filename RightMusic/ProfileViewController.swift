@@ -17,6 +17,8 @@ class ProfileViewController: UIViewController {
 
         profileView = ProfileView(view: view, parent: self)
         
+        self.navigationController?.navigationBar.hidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {

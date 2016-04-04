@@ -9,8 +9,10 @@
 // ARGH
 import Foundation
 
-public var userList: [User] = [User(name: "Gabriel Bendia", username: "gbendia", email: "gabrielbendia@gmail.com", password: "123", userIdentifier: 0), User(name: "Karina Tronkos", username: "kft", email: "karina.tronkos@gmail.com", password: "123", userIdentifier: 1)]
+var userList: [User] = [User(name: "Gabriel Bendia", username: "gbendia", email: "gabrielbendia@gmail.com", password: "123", userIdentifier: 0), User(name: "Karina Tronkos", username: "kft", email: "karina.tronkos@gmail.com", password: "123", userIdentifier: 1)]
+
 let nickelback = Artist(name: "Nickelback", image: "nickelback")
+
 let chordsWithLyrics = ChordsWithLyrics(lyrics: "", chords: "", currentTone: Tone.A, originalTone: Tone.A)
 
 let metallica = Artist(name: "Metallica", image: "metallica")

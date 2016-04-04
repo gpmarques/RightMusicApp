@@ -33,8 +33,7 @@ class FavoritesView: UIView {
         // MARK: - NavigationItem
         
         navItem = UINavigationItem()
-        navItem.titleView = navtitleLabel
-        
+        navItem.titleView = navtitleLabel        
         
         // MARK: - NavigationBar
         
@@ -49,6 +48,7 @@ class FavoritesView: UIView {
         
         
         view.addSubview(favoritesNavigationBar)
+        
         
     }
     

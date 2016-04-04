@@ -15,7 +15,7 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
     var tableViewFavorites: UITableView = UITableView()
     var favoritesView: FavoritesView!
     
-    var items: [String] = ["Nickelback - Someday"]
+    var items: [String] = [musicList[0].title + " - " + musicList[0].artist.name]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,8 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
         
         self.view.addSubview(favoritesView)
         self.view.addSubview(tableViewFavorites)
+        
+        self.navigationController?.navigationBar.hidden = true
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,12 +50,12 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
         
         cell.textLabel!.font = UIFont.systemFontOfSize(18)
         
-        if (indexPath.row == 0) {
-            
+//        if (indexPath.row == 0) {
+        
             let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(FavoritesViewController.cellTapped))
             cell.addGestureRecognizer(tapRecognizer)
             
-        }
+//        }
 
         
         return cell
@@ -62,7 +64,7 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
     
     func cellTapped() {
         
-        self.presentViewController(MusicViewController(), animated: true, completion: nil)
+        self.navigationController?.pushViewController(MusicViewController(), animated: true)
         
     }
         
@@ -76,17 +78,6 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
         let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         cellToDeSelect.contentView.backgroundColor = lightBlue
     }
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    
     
     
 }
