@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Artist {
+public class Artist {
     
     var name: String!
     var image: String!

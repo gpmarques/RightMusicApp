@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Music {
+public class Music {
 
     var title: String
     var genre: String

@@ -13,17 +13,10 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
     var tableViewPlaylist: UITableView = UITableView()
     var playView: NewPlaylistsView!
     var playlist: Playlist!
+    var playlistID: Int!
     var items: [String] = ["Add new musics"]
-    
-    init(playlist: Playlist) {
-        super.init(nibName: nil, bundle: nil)
-        self.playlist = playlist
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+    var addedMusic = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,60 +30,66 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
         tableViewPlaylist.backgroundColor = lightBlue
         
         playView = NewPlaylistsView(view: view, parent: self)
-        
+
         //self.view.addSubview(playView)
         self.view.addSubview(tableViewPlaylist)
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        
+        if playlist.music.count > 0 {
+            return playlist.music.count + 1
+        } else {
+            return self.items.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = self.items[indexPath.row]
-        
-        cell.backgroundColor = lightBlue
-        
-        cell.textLabel!.font = UIFont.systemFontOfSize(18)
-        
         if (indexPath.row == 0) {
+            cell.textLabel?.text = self.items[indexPath.row]
             let cellButton: UIButton!
             cellButton = UIButton(frame: CGRectMake(280, 7.5, 30, 30))
             cellButton.setImage(UIImage(named:"add"), forState: UIControlState.Normal)
             cell.contentView.addSubview(cellButton)
-            //let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewPlaylistViewController.cellTapped))
-            //cell.addGestureRecognizer(tapRecognizer)
+//            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewPlaylistViewController.cellTapped))
+//            cellButton.addGestureRecognizer(tapRecognizer)
+        } else {
+            cell.textLabel?.text = playlist.music[indexPath.row-1].title
         }
+        cell.backgroundColor = lightBlue
+        cell.textLabel!.font = UIFont.systemFontOfSize(18)
 
         return cell
         
     }
     
-    func cellTapped() {
-        
-        self.presentViewController(SearchMusicViewController(), animated: true, completion: nil)
-        
+    override func viewWillAppear(animated: Bool) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableViewPlaylist.reloadData()
+        })
+    }
+    override func viewDidDisappear(animated: Bool) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableViewPlaylist.reloadData()
+        })
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
-            cellTapped()
-            
+            let searchMusicVC = SearchMusicViewController()
+            searchMusicVC.playlist = playlistID
+//            self.addChildViewController(searchMusicVC)
+//            self.navigationController?.presentViewController(searchMusicVC, animated: true, completion: nil)
+//            self.presentViewController(searchMusicVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(searchMusicVC, animated: true)
+//            self.presentViewController(searchMusicVC, animated: true, completion: nil)
         } else {
-            
             self.navigationController?.pushViewController(MusicViewController(), animated: true)
-            
-            
         }
-    }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        cellToDeSelect.contentView.backgroundColor = lightBlue
     }
     
     override func didReceiveMemoryWarning() {

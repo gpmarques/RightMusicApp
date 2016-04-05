@@ -9,11 +9,11 @@
 import Foundation
 
 
-class Playlist {
+public class Playlist {
     
     var title: String
     var userIdentifier: Int
-    var music: [Music]?
+    var music: [Music] = []
     
     init (title: String, userIdentifier: Int) {
         

@@ -10,22 +10,22 @@ import UIKit
 
 class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var musicView: SearchMusicView!
+    var searchMusicView: SearchMusicView!
     
     var searchActive = false
-    let data = ["Someday", "How you remind me", "Burn it to the ground", "Far Away"]
+    let data = [musicList[0].title, musicList[1].title]
     var filtered: [String] = []
-
+    var playlist: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        musicView = SearchMusicView(view: view, parent: self)
+        searchMusicView = SearchMusicView(view: view, parent: self)
                 
     }
     
     override func viewDidAppear(animated: Bool) {
-        musicView.searchBar.becomeFirstResponder()
+        searchMusicView.searchBar.becomeFirstResponder()
     }
     
     // MARK: SearchBar Delegate
@@ -58,13 +58,20 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             searchActive = true
         }
-        self.musicView.tableViewMusic.reloadData()
+        self.searchMusicView.tableViewMusic.reloadData()
         
         
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+//        let playVC = NewPlaylistViewController(playlist: playLists[playlist])
+//        self.navigationController?.pushViewController(playVC, animated: true)
+//        let playVC = self.parentViewController
+//        print(playVC)
+//        let playVC = PlaylistViewController()
+//        self.navigationController?.popToViewController(playVC, animated: true)
+        self.navigationController?.popViewControllerAnimated(true)
+
     }
     
     // MARK: TableView Delegate and DataSource
@@ -89,9 +96,9 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        selectedCell.contentView.backgroundColor = lightBlueDarker
         
+        playLists[playlist].music.append(musicList[indexPath.row])
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

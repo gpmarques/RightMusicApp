@@ -32,11 +32,10 @@ class MusicView: UIView {
         
         //MARK: favoriteButton
         
-        let cGRectFavoriteButton: CGRect! = CGRectMake(view.frame.width*0.65942, view.frame.height*0.0991848, view.frame.width*0.0628019, view.frame.width*0.0628019)
+        let cGRectFavoriteButton: CGRect! = CGRectMake(view.frame.width*0.875, view.frame.height*0.167254, view.frame.width*0.078125, view.frame.width*0.078125)
         
         favoriteButton = UIImageView(frame: cGRectFavoriteButton)
         favoriteButton.image = UIImage(named: "favorite")
-        
         favoriteButton.userInteractionEnabled = true
  
         // MARK: WebView

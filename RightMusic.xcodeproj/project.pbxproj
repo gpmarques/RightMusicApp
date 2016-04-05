@@ -36,6 +36,7 @@
 		D1044B331CAFF62B00D71A51 /* MusicalTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B321CAFF62B00D71A51 /* MusicalTasteViewController.swift */; };
 		D1044B351CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B341CAFFEF700D71A51 /* MusicalTasteCollectionViewCell.swift */; };
 		D1044B3C1CB041CA00D71A51 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1044B3A1CB041CA00D71A51 /* THLabel.m */; };
+		D1044B451CB30A0F00D71A51 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1044B441CB30A0F00D71A51 /* HomeCollectionViewCell.swift */; };
 		D11E4E851CA9809B009C7CEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E841CA9809B009C7CEF /* LoginView.swift */; };
 		D11E4E871CA9A49F009C7CEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */; };
 		D11E4E891CA9A4B1009C7CEF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11E4E881CA9A4B1009C7CEF /* HomeView.swift */; };
@@ -79,6 +80,7 @@
 		D1044B3A1CB041CA00D71A51 /* THLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THLabel.m; sourceTree = "<group>"; };
 		D1044B3B1CB041CA00D71A51 /* THLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THLabel.h; sourceTree = "<group>"; };
 		D1044B3F1CB0441700D71A51 /* RightMusic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RightMusic-Bridging-Header.h"; sourceTree = "<group>"; };
+		D1044B441CB30A0F00D71A51 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D11E4E841CA9809B009C7CEF /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D11E4E881CA9A4B1009C7CEF /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -138,8 +140,8 @@
 				653E4D911CAC44630031396F /* ForgotPasswordViewController.swift */,
 				65F965431CA60FAE00227843 /* SignUpViewController.swift */,
 				D11E4E861CA9A49F009C7CEF /* HomeViewController.swift */,
-				770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */,
 				77A3DCCB1CB1CA3700954344 /* FavoritesViewController.swift */,
+				770639601CAAF67B000E5C83 /* PlaylistsViewController.swift */,
 				77A3DCC31CADBB4B00954344 /* NewPlaylistViewController.swift */,
 				77A3DCC71CAEBAF300954344 /* SearchMusicViewController.swift */,
 				D11E4EE81CAC5355009C7CEF /* MusicViewController.swift */,
@@ -157,6 +159,7 @@
 				653E4D8F1CAC37090031396F /* ForgotPasswordView.swift */,
 				65615D531CA9833E0087D40E /* SignUpView.swift */,
 				D11E4E881CA9A4B1009C7CEF /* HomeView.swift */,
+				D1044B441CB30A0F00D71A51 /* HomeCollectionViewCell.swift */,
 				770639621CAAF7CA000E5C83 /* PlaylistsView.swift */,
 				77A3DCCD1CB1CAE400954344 /* FavoritesView.swift */,
 				77A3DCC51CADC03E00954344 /* NewPlaylistView.swift */,
@@ -293,6 +296,7 @@
 				65615D541CA9833E0087D40E /* SignUpView.swift in Sources */,
 				D156B0031CA08DC300131D47 /* AppDelegate.swift in Sources */,
 				77A3DCC81CAEBAF300954344 /* SearchMusicViewController.swift in Sources */,
+				D1044B451CB30A0F00D71A51 /* HomeCollectionViewCell.swift in Sources */,
 				770639611CAAF67B000E5C83 /* PlaylistsViewController.swift in Sources */,
 				D11E4EE91CAC5355009C7CEF /* MusicViewController.swift in Sources */,
 				65F965341CA306C900227843 /* User.swift in Sources */,

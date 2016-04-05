@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let cellName: String = "Cell"
     
     struct musicas {
-        var sections: [String] =  ["Artistas / Bandas", "Dificuldade"]
+        var sections: [String] =  ["Artist / Band", "Difficulty"]
         var musics: [[String]] = [["Deep Purple", "Nickelback", "Metallica"], ["Legião Urbana","Thirty Second to Mars","Djavan"]]
     }
     
@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         highlightedSongs = UICollectionView(frame: cgRectHighlightSongs, collectionViewLayout: layout)
         highlightedSongs.dataSource = self
         highlightedSongs.delegate = self
-        highlightedSongs.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: cellName)
+        highlightedSongs.registerClass(HomeCollectionViewCell.self, forCellWithReuseIdentifier: cellName)
         highlightedSongs.backgroundColor = lightBlue
         
         // MARK: - TableViewArtistaBandas
@@ -86,16 +86,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return musicList.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath ) ->UICollectionViewCell{
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellName, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellName, forIndexPath: indexPath) as! HomeCollectionViewCell
         cell.backgroundColor = UIColor.whiteColor()
-        cell.layer.borderWidth = 1.0
-        cell.layer.cornerRadius = 10.0
+//        cell.layer.borderWidth = 1.0
+//        cell.layer.cornerRadius = 10.0
         cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.albumImage.image = UIImage(named: musicList[indexPath.row].artist.image)
+        cell.albumImage.clipsToBounds = true
+        cell.musicNameLabel.text = musicList[indexPath.row].title
+        cell.artistNameLabel.text = musicList[indexPath.row].artist.name
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.cellTapped))
         

@@ -27,7 +27,7 @@ class HomeView: UIView {
         let cGRectTitleLabel: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.0316901, view.frame.width*1.0, view.frame.height*0.125/2)
         
         navtitleLabel = UILabel(frame: cGRectTitleLabel)
-        navtitleLabel.text = "Sugestões"
+        navtitleLabel.text = "Sugestions"
         navtitleLabel.textColor = UIColor.whiteColor()
         navtitleLabel.textAlignment = .Center
         
@@ -58,7 +58,7 @@ class HomeView: UIView {
         let cGRectMusicalTaste: CGRect! = CGRectMake(view.frame.width*0.028125, view.frame.height*0.140845, view.frame.width*0.375, view.frame.height*0.06875)
         
         musicalTasteLabel = UILabel(frame: cGRectMusicalTaste)
-        musicalTasteLabel.text = "Gosto Musical"
+        musicalTasteLabel.text = "Musical Taste"
         musicalTasteLabel.textColor = tabAndNavigationBlue
         musicalTasteLabel.textAlignment = .Left
         

@@ -10,7 +10,7 @@ import Foundation
 
 // Enum for the possible music tones
 
-enum Tone: String {
+public enum Tone: String {
     
     case C = "C"
     case Csharp = "C#"
@@ -25,12 +25,12 @@ enum Tone: String {
     case Asharp = "A#"
     case B = "B"
     
-    static let allTones: [Tone] = [.C, .Csharp, .D, .Dsharp, .E, .F, .Fsharp, .G, .Gsharp, .A, .Asharp, .B]
+    public static let allTones: [Tone] = [.C, .Csharp, .D, .Dsharp, .E, .F, .Fsharp, .G, .Gsharp, .A, .Asharp, .B]
     
 }
 
 
-class ChordsWithLyrics {
+public class ChordsWithLyrics {
     
     var lyrics: String
     var chords: String //[Chord]

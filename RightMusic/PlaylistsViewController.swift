@@ -34,7 +34,13 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
         self.view.addSubview(tableViewPlaylist)
         
         self.navigationController?.navigationBar.hidden = true
-        
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableViewPlaylist.reloadData()
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,14 +84,18 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
             let textField = alert.textFields![0] as UITextField
             if textField.text != ""  && textField.text != " " {
                 let newPlaylist = self.addNewPlaylist(textField.text!)
-                let playVC = NewPlaylistViewController(playlist: newPlaylist)
+                let playVC = NewPlaylistViewController()
+                playVC.playlist = newPlaylist
+                playVC.playlistID = playLists.count - 1
+                //self.navigationController?.pushViewController(playVC, animated: true)
+                //self.presentViewController(playVC, animated: true, completion: nil)
                 self.navigationController?.pushViewController(playVC, animated: true)
             } else {
                 
                 let alertPlaylistName = UIAlertController(title: "The new playlist can't be nameless", message: "", preferredStyle: UIAlertControllerStyle.Alert)
                 alertPlaylistName.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
                 self.presentViewController(alertPlaylistName, animated: true, completion: nil)
-                
+            
             }
         }))
         
@@ -109,7 +119,9 @@ class PlaylistViewController: UIViewController,UITableViewDelegate, UITableViewD
             openAlert()
         }
         else {
-            let openPlayVC = NewPlaylistViewController(playlist: playLists[indexPath.row])
+            let openPlayVC = NewPlaylistViewController()
+            openPlayVC.playlist = playLists[indexPath.row]
+            openPlayVC.playlistID = indexPath.row
             self.navigationController!.pushViewController(openPlayVC, animated: true)
         }
         

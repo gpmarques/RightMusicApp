@@ -88,7 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: Forgot Password Function
     
     func forgotPassword (sender: UIButton!) {
-        self.presentViewController(FavoritesViewController(), animated: true, completion: nil)
+        self.presentViewController(ForgotPasswordViewController(), animated: true, completion: nil)
     }
     
     // MARK: keyboard dismiss

@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Chord {
+public class Chord {
     
     var chord: String!
     var image: String?
