@@ -53,14 +53,14 @@ class MusicView: UIView {
         let cGRectAlbumImage: CGRect! = CGRectMake(view.frame.width*0.053125, view.frame.height*0.0566901,view.frame.width*0.28125, view.frame.height*0.1875 - 10)
         
         albumImage = UIImageView(frame: cGRectAlbumImage)
-        albumImage.image = UIImage(named: "nickelback")
+//        albumImage.image = UIImage(named: "nickelback")
 
         // MARK: labelMusicName
         
         let cGRectMusicName: CGRect! = CGRectMake(view.frame.width*0.375, view.frame.height*0.0704225, view.frame.width*0.640625, view.frame.height*0.075)
         
         labelMusicName = UILabel(frame: cGRectMusicName)
-        labelMusicName.text = "Someday"
+//        labelMusicName.text = "Someday"
         labelMusicName.textColor = tabAndNavigationBlue
         
         // MARK: labelArtistName
@@ -68,7 +68,7 @@ class MusicView: UIView {
         let cGRectArtistName: CGRect! = CGRectMake(view.frame.width*0.375, view.frame.height*0.114437, view.frame.width*0.640625, view.frame.height*0.071875)
         
         labelArtistName = UILabel(frame: cGRectArtistName)
-        labelArtistName.text = "Nickelback"
+//        labelArtistName.text = "Nickelback"
         labelArtistName.textColor = tabAndNavigationBlue
         
         // MARK: Tone Button
@@ -115,7 +115,6 @@ class MusicView: UIView {
         
         //view.addSubview(youtubeMusic)
         view.addSubview(playButton)
-        view.addSubview(favoriteButton)
         view.addSubview(albumImage)
         view.addSubview(labelMusicName)
         view.addSubview(labelArtistName)
@@ -123,6 +122,8 @@ class MusicView: UIView {
         view.addSubview(instrumentButton)
         view.addSubview(textViewChords)
         view.addSubview(textViewLyrics)
+        view.addSubview(favoriteButton)
+
         
     }
     

@@ -13,6 +13,8 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
 
     var musicView: MusicView!
     var lineNumber = 0
+    var music: Music!
+    var isFavorite = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,10 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         
         musicView.textViewLyrics.delegate = self
         musicView.textViewChords.delegate = self
+        musicView.albumImage.image = UIImage(named: music.artist.image)
+        musicView.labelMusicName.text = music.title
+        musicView.labelArtistName.text = music.artist.name
+        
 
         let bundle = NSBundle.mainBundle()
         let filePath = bundle.pathForResource("MusicList/Someday_Nickelback", ofType: ".txt")
@@ -66,7 +72,18 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
     }
     
     func favoriteTapped() {
-        //IMPLEMENTAR QUE, QUANDO O favoriteButton É CLICADO, A MUSICA VAI PRA TABLEVIEW DA VIEW "FAVORITOS"
+        if !isFavorite {
+            musicView.favoriteButton.image = UIImage(named: "favoritePressed")
+            userList[loggedUser].playlist[0].music.append(self.music)
+            print(userList[loggedUser].playlist[0].music.append(self.music))
+            isFavorite = true
+            print(userList[loggedUser].playlist[0].music.count)
+
+        } else {
+            musicView.favoriteButton.image = UIImage(named: "favorite")
+            userList[loggedUser].playlist[0].music.removeLast()
+        }
+        
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {

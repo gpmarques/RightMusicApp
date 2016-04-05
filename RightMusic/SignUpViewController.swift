@@ -72,8 +72,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         let newUser = User(name: signUpView.nameTextField.text!, username: signUpView.usernameTextField.text!, email: signUpView.emailTextField.text!, password: signUpView.passwordTextField.text!, userIdentifier: userList.endIndex)
                         userList.append(newUser)
                         
-                        let signUpSuccedded = UIAlertController(title: "Cadastro completo", message: "Você se cadastrou com sucesso. Pressione 'Confirmar' para continuar e fazer o seu login", preferredStyle: .Alert)
-                        let confirmAction = UIAlertAction(title: "Confirmar", style: .Default, handler: { action in self.presentViewController(LoginViewController(), animated: true, completion: nil) } )
+                        let signUpSuccedded = UIAlertController(title: "Sign Up Complete", message: "Press 'Confirm' to continue and login.", preferredStyle: .Alert)
+                        let confirmAction = UIAlertAction(title: "Confirm", style: .Default, handler: { action in self.presentViewController(LoginViewController(), animated: true, completion: nil) } )
                         signUpSuccedded.addAction(confirmAction)
                         presentViewController(signUpSuccedded, animated: true, completion: nil)
                         

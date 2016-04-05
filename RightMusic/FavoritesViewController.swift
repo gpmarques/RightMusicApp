@@ -15,7 +15,7 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
     var tableViewFavorites: UITableView = UITableView()
     var favoritesView: FavoritesView!
     
-    var items: [String] = [musicList[0].title + " - " + musicList[0].artist.name]
+    var items = userList[loggedUser].playlist[0].music
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,12 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
         self.navigationController?.navigationBar.hidden = true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.tableViewFavorites.reloadData()
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(self.items.count)
         return self.items.count
     }
     
@@ -44,34 +49,31 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
         
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = self.items[indexPath.row]
+        cell.textLabel?.text = self.items[indexPath.row].title + " - " + self.items[indexPath.row].artist.name
         
         cell.backgroundColor = lightBlue
         
         cell.textLabel!.font = UIFont.systemFontOfSize(18)
         
-//        if (indexPath.row == 0) {
-        
-            let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(FavoritesViewController.cellTapped))
-            cell.addGestureRecognizer(tapRecognizer)
-            
-//        }
-
+//        let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(FavoritesViewController.cellTapped))
+//        cell.addGestureRecognizer(tapRecognizer)
         
         return cell
         
     }
     
-    func cellTapped() {
+//    func cellTapped() {
+//        
+//        self.navigationController?.pushViewController(MusicViewController(), animated: true)
+//        
+//    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let musicVC = MusicViewController()
+        musicVC.music = items[indexPath.row]
         
         self.navigationController?.pushViewController(MusicViewController(), animated: true)
-        
-    }
-        
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        selectedCell.contentView.backgroundColor = lightBlueDarker
-        
+
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

@@ -101,19 +101,25 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.musicNameLabel.text = musicList[indexPath.row].title
         cell.artistNameLabel.text = musicList[indexPath.row].artist.name
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.cellTapped))
-        
-        cell.addGestureRecognizer(tapRecognizer)
+//        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.cellTapped))
+//        
+//        cell.addGestureRecognizer(tapRecognizer)
         
         return cell
         
     }
-    
-    func cellTapped() {
-        self.navigationController?.pushViewController(MusicViewController(), animated: true)
-        //self.presentViewController(MusicViewController(), animated: true, completion: nil)
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let musicVC = MusicViewController()
+        musicVC.music = musicList[indexPath.row]
+        self.navigationController?.pushViewController(musicVC, animated: true)
         
     }
+//    
+//    func cellTapped() {
+//        //self.presentViewController(MusicViewController(), animated: true, completion: nil)
+//        
+//    }
     
     // MARK: - Table view data source
     
