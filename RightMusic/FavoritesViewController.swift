@@ -37,7 +37,9 @@ class FavoritesViewController: UIViewController,UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableViewFavorites.reloadData()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableViewFavorites.reloadData()
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

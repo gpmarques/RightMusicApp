@@ -17,18 +17,22 @@ class MusicView: UIView {
     var toneButton: UIButton!, instrumentButton: UIButton!
     var textViewChords: UITextView!
     var textViewLyrics: UITextView!
+    var playLabel: UILabel! // Errado
     
     init (view: UIView, parent: MusicViewController) {
         super.init(frame: view.frame)
         
         // MARK: playButton
         
-        let cGRectPlayButton: CGRect! = CGRectMake(view.frame.width*0.0546875, view.frame.height*0.40493, view.frame.width*0.0625, view.frame.height*0.0625)
+        let cGRectPlayButton: CGRect! = CGRectMake(view.frame.width*0.0546875, view.frame.height*0.40493 - 35, view.frame.width*0.0525, view.frame.height*0.0525)
         
         playButton = UIImageView(frame: cGRectPlayButton)
         playButton.image = UIImage(named: "play")
         
         playButton.userInteractionEnabled = true
+        
+        playLabel = UILabel(frame: CGRectMake(view.frame.width*0.0546875 + view.frame.width*0.0525 + 5, view.frame.height*0.40493 - 35, view.frame.width, view.frame.height*0.0525))
+        playLabel.text = "Official Video"
         
         //MARK: favoriteButton
         
@@ -37,16 +41,6 @@ class MusicView: UIView {
         favoriteButton = UIImageView(frame: cGRectFavoriteButton)
         favoriteButton.image = UIImage(named: "favorite")
         favoriteButton.userInteractionEnabled = true
- 
-        // MARK: WebView
-        
-        let cGRectYouTube: CGRect! = CGRectMake(view.frame.width*0.0, view.frame.height*0.387324, view.frame.width*1.0, view.frame.height*0.171875)
-        
-        youtubeMusic = UIWebView(frame: cGRectYouTube)
-        //<iframe width="420" height="315" src="https://www.youtube.com/embed/-VMFdpdDYYA" frameborder="0" allowfullscreen></iframe>
-        
-        youtubeMusic.loadRequest(NSURLRequest(URL: NSURL(string: "https://www.youtube.com/embed/-VMFdpdDYYA")!))
-        youtubeMusic.delegate = parent
         
         // MARK: AlbumImage
         
@@ -95,7 +89,7 @@ class MusicView: UIView {
         
         // MARK: Chords Text View
         
-        textViewChords = UITextView(frame: CGRectMake(view.frame.width*0.0625, view.frame.height*0.475352, view.frame.width*0.875, view.frame.height - view.frame.height*0.475352))
+        textViewChords = UITextView(frame: CGRectMake(view.frame.width*0.0625, view.frame.height*0.475352 - 35, view.frame.width*0.875, view.frame.height - view.frame.height*0.475352))
         textViewChords.textColor = UIColor.orangeColor()
         textViewChords.backgroundColor = UIColor.clearColor()
         textViewChords.editable = false
@@ -104,7 +98,7 @@ class MusicView: UIView {
         
         // MARK: Lyrics Text View
         
-        textViewLyrics = UITextView(frame: CGRectMake(view.frame.width*0.0625, view.frame.height*0.475352, view.frame.width*0.875, view.frame.height - view.frame.height*0.475352))
+        textViewLyrics = UITextView(frame: CGRectMake(view.frame.width*0.0625, view.frame.height*0.475352 - 35, view.frame.width*0.875, view.frame.height - view.frame.height*0.475352))
         textViewLyrics.backgroundColor = UIColor.clearColor()
         textViewLyrics.textColor = UIColor.blackColor()
         textViewLyrics.editable = false
@@ -123,6 +117,7 @@ class MusicView: UIView {
         view.addSubview(textViewChords)
         view.addSubview(textViewLyrics)
         view.addSubview(favoriteButton)
+        view.addSubview(playLabel)
 
         
     }

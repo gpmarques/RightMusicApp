@@ -29,6 +29,7 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         let icon2 = UITabBarItem(title: "Playlists", image: UIImage(named: "playlistTabBarIcon"), selectedImage: UIImage(named: "playlistTabBarIcon"))
         let icon3 = UITabBarItem(title: "Favorites", image: UIImage(named: "favoritesTabBarIcon"), selectedImage: UIImage(named: "favoritesTabBarIcon"))
         let icon4 = UITabBarItem(title: "Profile", image: UIImage(named: "profileTabBarIcon"), selectedImage: UIImage(named: "profileTabBarIcon"))
+        
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
         item3.tabBarItem = icon3

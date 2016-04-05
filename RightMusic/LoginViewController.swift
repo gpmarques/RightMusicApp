@@ -91,7 +91,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.presentViewController(ForgotPasswordViewController(), animated: true, completion: nil)
     }
     
-    // MARK: keyboard dismiss
+    // MARK: Keyboard Dismiss
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }

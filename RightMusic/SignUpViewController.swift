@@ -90,7 +90,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // MARK: Keyboard dismiss
+    // MARK: Keyboard Dismiss
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }

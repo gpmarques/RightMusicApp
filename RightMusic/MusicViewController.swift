@@ -33,7 +33,6 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         musicView.albumImage.image = UIImage(named: music.artist.image)
         musicView.labelMusicName.text = music.title
         musicView.labelArtistName.text = music.artist.name
-        
 
         let bundle = NSBundle.mainBundle()
         let filePath = bundle.pathForResource("MusicList/Someday_Nickelback", ofType: ".txt")
@@ -58,16 +57,30 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
                     
                 }
             }
+            
+            UIApplication.sharedApplication().idleTimerDisabled = true
+            
         }
         
         musicView.textViewChords.text = musicView.textViewChords.text.stringByReplacingOccurrencesOfString("\\", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
         musicView.textViewLyrics.text = musicView.textViewLyrics.text.stringByReplacingOccurrencesOfString("\\", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
     }
     
     func playTapped() {
         
-        let safariVC = SFSafariViewController(URL: NSURL(string: "https://www.youtube.com/embed/-VMFdpdDYYA")!)
-        self.presentViewController(safariVC, animated: true, completion: nil)
+        if musicView.labelArtistName.text == "Nickelback" {
+            
+            let safariVC = SFSafariViewController(URL: NSURL(string: "https://www.youtube.com/embed/-VMFdpdDYYA")!)
+            self.presentViewController(safariVC, animated: true, completion: nil)
+            
+        }
+        else {
+            
+            let safariVC = SFSafariViewController(URL: NSURL(string: "https://www.youtube.com/embed/Tj75Arhq5ho")!)
+            self.presentViewController(safariVC, animated: true, completion: nil)
+            
+        }
         
     }
     
@@ -75,7 +88,7 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         if !isFavorite {
             musicView.favoriteButton.image = UIImage(named: "favoritePressed")
             userList[loggedUser].playlist[0].music.append(self.music)
-            print(userList[loggedUser].playlist[0].music.append(self.music))
+//            print(userList[loggedUser].playlist[0].music.append(self.music))
             isFavorite = true
             print(userList[loggedUser].playlist[0].music.count)
 
