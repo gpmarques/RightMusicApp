@@ -88,7 +88,9 @@ class NewPlaylistViewController: UIViewController, UITableViewDelegate, UITableV
             self.navigationController?.pushViewController(searchMusicVC, animated: true)
 //            self.presentViewController(searchMusicVC, animated: true, completion: nil)
         } else {
-            self.navigationController?.pushViewController(MusicViewController(), animated: true)
+            let musicVC = MusicViewController()
+            musicVC.music = playLists[playlistID].music[indexPath.row-1]
+            self.navigationController?.pushViewController(musicVC, animated: true)
         }
     }
     

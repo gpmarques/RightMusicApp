@@ -13,7 +13,7 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
     var searchMusicView: SearchMusicView!
     
     var searchActive = false
-    let data = [musicList[0].title, musicList[1].title]
+    let data = [musicList[0].title, musicList[1].title, musicList[2].title]
     var filtered: [String] = []
     var playlist: Int!
     

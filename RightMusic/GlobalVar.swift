@@ -15,10 +15,11 @@ public let chordsWithLyrics = ChordsWithLyrics(lyrics: "", chords: "", currentTo
 
 let nickelback = Artist(name: "Nickelback", image: "nickelback")
 let metallica = Artist(name: "Metallica", image: "metallica")
+let adelle = Artist(name: "Adelle", image: "adele")
 
 public var artistList: [Artist] = [nickelback, metallica]
 
-public var musicList: [Music] = [Music(title: "Someday", genre: "Rock", artist: nickelback, chords: chordsWithLyrics), Music(title: "Nothing Else Matters", genre: "Rock", artist: metallica, chords: chordsWithLyrics)]
+public var musicList: [Music] = [Music(title: "Someday", genre: "Rock", artist: nickelback, chords: chordsWithLyrics), Music(title: "Nothing Else Matters", genre: "Rock", artist: metallica, chords: chordsWithLyrics), Music(title: "Hello", genre: "Pop", artist: adelle, chords: chordsWithLyrics)]
 
 public var playLists: [Playlist] = [Playlist(title: "New Playlist",userIdentifier: 999999)]
 
