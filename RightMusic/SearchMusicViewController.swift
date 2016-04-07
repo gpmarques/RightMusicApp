@@ -97,8 +97,17 @@ class SearchMusicViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        playLists[playlist].music.append(musicList[indexPath.row])
-        self.navigationController?.popViewControllerAnimated(true)
+        if searchActive {
+            let name = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
+            let index = musicList.indexOf({$0.title == name})
+            playLists[playlist].music.append(musicList[index!])
+            self.navigationController?.popViewControllerAnimated(true)
+        } else {
+            
+            playLists[playlist].music.append(musicList[indexPath.row])
+            self.navigationController?.popViewControllerAnimated(true)
+
+        }
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

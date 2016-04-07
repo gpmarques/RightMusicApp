@@ -58,7 +58,7 @@ class HomeView: UIView {
         let cGRectMusicalTaste: CGRect! = CGRectMake(view.frame.width*0.028125, view.frame.height*0.140845, view.frame.width*0.375, view.frame.height*0.06875)
         
         musicalTasteLabel = UILabel(frame: cGRectMusicalTaste)
-        musicalTasteLabel.text = "Musical Taste"
+        musicalTasteLabel.text = "For you"
         musicalTasteLabel.textColor = tabAndNavigationBlue
         musicalTasteLabel.textAlignment = .Left
         

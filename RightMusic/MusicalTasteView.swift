@@ -40,7 +40,7 @@ class MusicalTasteView: UIView {
         questionLabel = UILabel(frame: cGRectQuestionLabel)
         questionLabel.textColor = UIColor.whiteColor()
         questionLabel.font = UIFont.systemFontOfSize(18.0)
-        questionLabel.text = "What music genre do you like?"
+        questionLabel.text = "Which music genre do you like?"
         
         // MARK: confirmButton
         

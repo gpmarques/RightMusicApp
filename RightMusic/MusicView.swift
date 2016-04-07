@@ -71,7 +71,7 @@ class MusicView: UIView {
         
         toneButton = UIButton(frame: cGRectToneButton)
         toneButton.setTitleColor(tabAndNavigationBlue, forState: .Normal)
-        toneButton.setTitle("Tom: D", forState: .Normal)
+        toneButton.setTitle("Tone: D", forState: .Normal)
         toneButton.backgroundColor = lightBlue
         toneButton.layer.borderColor = tabAndNavigationBlue.CGColor
         toneButton.layer.borderWidth = 1.0
@@ -82,7 +82,7 @@ class MusicView: UIView {
         
         instrumentButton = UIButton(frame: cGRectInstrument)
         instrumentButton.setTitleColor(tabAndNavigationBlue, forState: .Normal)
-        instrumentButton.setTitle("Violão", forState: .Normal)
+        instrumentButton.setTitle("Guitar", forState: .Normal)
         instrumentButton.backgroundColor = lightBlue
         instrumentButton.layer.borderColor = tabAndNavigationBlue.CGColor
         instrumentButton.layer.borderWidth = 1.0

@@ -72,6 +72,7 @@ class MusicViewController: UIViewController, UIWebViewDelegate, UITextViewDelega
         if musicView.labelArtistName.text == "Nickelback" {
             
             let safariVC = SFSafariViewController(URL: NSURL(string: "https://www.youtube.com/embed/-VMFdpdDYYA")!)
+//            self.navigationController?.pushViewController(safariVC, animated: true)
             self.presentViewController(safariVC, animated: true, completion: nil)
             
         }
